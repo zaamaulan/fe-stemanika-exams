@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
@@ -15,6 +15,21 @@ const NavBar = () => {
     navigate(path)
   }
 
+  // Menutup navbar ketika pengguna mengklik di luar area navbar
+  useEffect(() => {
+    const closeNavbarOnOutsideClick = (e) => {
+      if (showNavLinks && !e.target.closest('.navbar-container')) {
+        setShowNavLinks(false)
+      }
+    }
+
+    document.addEventListener('click', closeNavbarOnOutsideClick)
+
+    return () => {
+      document.removeEventListener('click', closeNavbarOnOutsideClick)
+    }
+  }, [showNavLinks])
+  
   return (
     <nav className="fixed top-0 z-50 w-full bg-white bg-opacity-50 backdrop-blur-lg backdrop-filter xl:px-40 xl:py-6">
       <div className="hidden xl:flex xl:items-center xl:justify-between xl:gap-x-10">
@@ -46,7 +61,7 @@ const NavBar = () => {
       <div
         className={`flex items-center justify-between bg-white px-6 py-4 transition-all duration-500 ease-in-out xl:hidden ${
           showNavLinks ? 'bg-white' : 'bg-opacity-50 backdrop-blur-lg backdrop-filter'
-        }`}
+        } navbar-container`}
       >
         <motion.div
           initial={{ opacity: 0, scale: 1, x: -10 }}
@@ -70,7 +85,7 @@ const NavBar = () => {
             </svg>
           </div>
           <div
-            className={`absolute mt-5 flex w-full transform flex-col  space-y-6 bg-white pl-10 py-4 text-sm transition-transform duration-500 ease-in-out xl:hidden ${
+            className={`absolute mt-5 flex w-full transform flex-col  space-y-6 bg-white pb-8 pl-10 pt-4 text-sm transition-transform duration-500 ease-in-out xl:hidden ${
               showNavLinks ? '-translate-x-8' : '-translate-x-[110vw]'
             }`}
           >
@@ -104,18 +119,20 @@ const NavBar = () => {
             ease: 'easeInOut',
           }}
         >
-          <Link to={'/'} onClick={() => handleLinkClick('/')}>Stemanika Exam</Link>
+          <Link to={'/'} onClick={() => handleLinkClick('/')}>
+            Stemanika Exam
+          </Link>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 1, x: 10 }}
-          animate={{ opacity: 1, scale: 1, x: [0, -10, 0] }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{
             duration: 0.4,
             delay: 0.5,
             ease: 'easeOut',
           }}
         >
-          <Link to={'/profile'} onClick={() => handleLinkClick('/profile')} >
+          <Link to={'/profile'} onClick={() => handleLinkClick('/profile')}>
             <img src="/profile.jpg" alt="" className="w-8 rounded-full" />
           </Link>
         </motion.div>
