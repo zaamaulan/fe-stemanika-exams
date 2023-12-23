@@ -40,39 +40,6 @@ export const App = () => {
     fetchDaftarUjian()
   }, [])
 
-  const cardContent = [
-    {
-      title: 'Persiapan Sebelum Ujian',
-      points: [
-        'Perangkat yang diperlukan: Pastikan perangkat dan koneksi internet stabil.',
-        'Ruangan yang Dipakai: Pelajari ketentuan ruangan dan pencahayaan.',
-        'Koneksi Internet: Pastikan koneksi internet stabil.',
-      ],
-    },
-    {
-      title: 'Setelah Ujian',
-      points: [
-        'Verifikasi Hasil: Periksa hasil ujian setelah submit.',
-        'Logout: Keluar dari akun dan tutup peramban.',
-        'Koneksi Internet: Pastikan koneksi internet stabil.',
-      ],
-    },
-    {
-      title: 'Menjalani Ujian',
-      points: [
-        'Dashboard Ujian: Akses dashboard dan pilih ujian.',
-        'Petunjuk Ujian: Baca petunjuk sebelum memulai ujian.',
-        'Waktu Ujian: Perhatikan waktu setiap bagian ujian.',
-        'Navigasi Soal: Gunakan navigasi untuk beralih antara soal.',
-        'Submit Jawaban: Simpan jawaban dan klik "Submit".',
-      ],
-    },
-    {
-      title: 'Bantuan Teknis',
-      points: ['Jika mengalami masalah teknis, hubungi guru pengawas atau tim dukungan teknis.'],
-    },
-  ]
-
   return (
     <main className="flex flex-col px-8 md:items-center xl:px-0">
       <div className="w-full py-32  xl:py-52">

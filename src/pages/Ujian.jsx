@@ -11,7 +11,8 @@ const Ujian = () => {
             <Helmet>
                 <title>Ujian</title>
             </Helmet>
-            <FormUjian />
+            {/* <FormUjian /> */}
+            
       
             
         </div>

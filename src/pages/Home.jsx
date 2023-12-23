@@ -41,7 +41,7 @@ const App = () => {
   }, [])
 
   return (
-    <main className="flex flex-col px-8 md:items-center xl:px-0">
+    <main className="flex flex-col px-6 md:items-center xl:px-0">
       <div className="w-full py-32  xl:py-52">
         <div className="min-w-sm mx-auto md:text-center xl:max-w-screen-lg ">
           <h1 className="mb-4 text-4xl font-bold text-black xl:text-5xl/[1.3]">
@@ -59,7 +59,7 @@ const App = () => {
       </div>
       <section className="py-10 xl:px-40 xl:py-20 ">
         <div className="min-w-sm w-full">
-          <h1 className="mb-2 text-3xl font-bold text-black xl:text-center xl:text-4xl">Mengapa Stemanika Exam?</h1>
+          <h1 className="mb-2 text-2xl font-bold text-black xl:text-center xl:text-4xl">Mengapa Stemanika Exam?</h1>
           <p className="mb-6 text-sm text-gray-500 xl:mb-14 xl:text-center xl:text-base">
             Menjamin Integritas Ujian dan Kenyamanan Pengguna
           </p>
@@ -75,7 +75,7 @@ const App = () => {
             >
               <Card>
                 <div className="mb-4 xl:text-center">
-                  <h1 className="mb-2 mt-4 text-2xl font-bold text-black xl:text-3xl">Fleksibilitas</h1>
+                  <h1 className="mb-2 mt-4 text-xl font-bold text-black xl:text-3xl">Fleksibilitas</h1>
 
                   <p className="mb-6 text-sm text-gray-500 xl:mb-14 xl:text-center xl:text-base">
                     Stemanika Exam memberikan fleksibilitas dalam penjadwalan ujian. Peserta dapat mengakses platform
@@ -95,7 +95,7 @@ const App = () => {
             >
               <Card>
                 <div className="mb-4 xl:text-center">
-                  <h1 className="mb-2 mt-4 text-2xl font-bold text-black xl:text-3xl">Pembaruan Hasil Ujian</h1>
+                  <h1 className="mb-2 mt-4 text-xl font-bold text-black xl:text-3xl">Pembaruan Hasil Ujian</h1>
 
                   <p className="mb-6 text-sm text-gray-500 xl:mb-14 xl:text-center xl:text-base">
                     Kami menyajikan hasil ujian dengan cepat dan akurat. Peserta dapat segera melihat hasil dan analisis
@@ -115,7 +115,7 @@ const App = () => {
             >
               <Card>
                 <div className="mb-4 xl:text-center">
-                  <h1 className="mb-2 mt-4 text-2xl font-bold text-black xl:text-3xl">Kemudahan Pengguna</h1>
+                  <h1 className="mb-2 mt-4 text-xl font-bold text-black xl:text-3xl">Kemudahan Pengguna</h1>
 
                   <p className="mb-6 text-sm text-gray-500 xl:mb-14 xl:text-center xl:text-base">
                     Stemanika Exam dirancang agar mudah digunakan tanpa memerlukan proses yang rumit. Peserta dapat
@@ -130,7 +130,7 @@ const App = () => {
       {daftarUjian ? (
         <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20">
           <div className="min-w-sm mb-6 w-full xl:mb-14">
-            <h1 className="mb-2 text-3xl font-bold text-black xl:text-3xl">Daftar Ujian</h1>
+            <h1 className="mb-2 text-2xl font-bold text-black xl:text-3xl">Daftar Ujian</h1>
             <p className="mb-6  text-sm text-gray-500 xl:text-base">Mari Bersiap, Pekan Ini Penuh Keajaiban Belajar!</p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
               {daftarUjian.map((ujian) => {
@@ -167,7 +167,7 @@ const App = () => {
                     <Card>
                       <div className="mb-10">
                         {tagComponent}
-                        <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">{ujian.attributes.nama_ujian}</h1>
+                        <h1 className="mb-2 mt-4 text-xl font-semibold text-black">{ujian.attributes.nama_ujian}</h1>
 
                         <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>{ujian.attributes.deskripsi}</p>
                       </div>
@@ -197,7 +197,7 @@ const App = () => {
         
         <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20">
           <div className="min-w-sm mb-6 w-full xl:mb-14">
-            <h1 className="mb-2 text-3xl font-bold text-black xl:text-3xl">Daftar Ujian</h1>
+            <h1 className="mb-2 text-2xl font-bold text-black xl:text-3xl">Daftar Ujian</h1>
             <p className="mb-6  text-sm text-gray-500 xl:text-base">Mari Bersiap, Pekan Ini Penuh Keajaiban Belajar!</p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
               <motion.div
@@ -212,7 +212,7 @@ const App = () => {
                 <Card>
                   <div className="mb-10">
                     <CompletedTags />
-                    <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
+                    <h1 className="mb-2 mt-4 text-xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
 
                     <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
@@ -242,7 +242,7 @@ const App = () => {
                 <Card>
                   <div className="mb-10">
                     <UpcomingTags />
-                    <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
+                    <h1 className="mb-2 mt-4 text-xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
 
                     <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
@@ -272,7 +272,7 @@ const App = () => {
                 <Card>
                   <div className="mb-10">
                     <LastMinutePreparationTags />
-                    <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
+                    <h1 className="mb-2 mt-4 text-xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
 
                     <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
@@ -300,7 +300,7 @@ const App = () => {
       )}
       <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20">
         <div className="min-w-sm mb-6 w-full xl:mb-14">
-          <h1 className="mb-2 text-3xl font-bold text-black xl:text-4xl">Panduan Ujian</h1>
+          <h1 className="mb-2 text-2xl font-bold text-black xl:text-4xl">Panduan Ujian</h1>
           <p className="mb-6 text-sm text-gray-500 xl:text-base">
             Menghadapi Ujian dengan Keyakinan: Panduan Langkah-demi-Langkah
           </p>
