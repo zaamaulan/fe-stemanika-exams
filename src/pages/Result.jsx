@@ -2,8 +2,8 @@ import React from 'react';
 
 const Result = () => {
     return (
-        <div>
-            
+        <div className='grid place-items-center h-screen'>
+            Hasil
         </div>
     );
 };

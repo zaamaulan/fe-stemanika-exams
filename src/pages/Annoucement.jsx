@@ -2,8 +2,8 @@ import React from 'react';
 
 const Annoucement = () => {
     return (
-        <div>
-            
+        <div className='grid place-items-center h-screen'>
+            Pengunguman
         </div>
     );
 };
