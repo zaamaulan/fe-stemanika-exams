@@ -1,17 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
 import NavBar from "../Navigation/NavBar";
+import { Outlet } from "react-router-dom";
 
-const Layout = (props) => {
+const Layout = () => {
     return (
         <React.Fragment>
             <header>
                 <NavBar />
             </header>
+            <div className=" ">
+                <Outlet />
+            </div>
         </React.Fragment>
     );
 };
-
-Layout.propTypes = {};
 
 export default Layout;

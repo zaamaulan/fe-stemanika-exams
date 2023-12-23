@@ -1,5 +1,7 @@
+import FormUjian from "../components/Form/FormUjians";
+import FormUjianEx from "../components/Form/FormUjianExample";
 import { useAuth } from "../context/useAuth";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Ujian = () => {
     const { isAuthenticated, token } = useAuth();
@@ -9,15 +11,9 @@ const Ujian = () => {
             <Helmet>
                 <title>Ujian</title>
             </Helmet>
-            <h1>Welcome to the Ujian Page</h1>
-            {isAuthenticated ? (
-                <div>
-                    <p>You are authenticated!</p>
-                    <p>Your JWT Token: {token}</p>
-                </div>
-            ) : (
-                <p>You are not authenticated.</p>
-            )}
+            <FormUjian />
+      
+            
         </div>
     );
 };
