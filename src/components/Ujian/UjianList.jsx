@@ -1,7 +1,7 @@
 import { differenceInMinutes, isPast } from 'date-fns'
 import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
-import  { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../Card/Card'
 import {
@@ -41,7 +41,7 @@ const UjianList = () => {
           Halaman ini berisi daftar semua ujian yang akan dilaksanakan. Anda dapat melihat jadwal ujian, dan informasi
           lainnya.
         </p>
-        <div className="relative mb-4 w-full">
+        <form onSubmit={(e) => e.preventDefault()} className="relative mb-4 w-full">
           <label htmlFor="search" className="absolute inset-y-0 left-0 flex items-center pl-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ const UjianList = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full rounded-md border-2 p-2 pl-10 shadow-sm focus:outline-none md:max-w-xs"
           />
-        </div>
+        </form>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
           {sortedUjianList
@@ -121,13 +121,16 @@ const UjianList = () => {
                       </p>
                     </div> */}
                     {/* <ButtonPrimary>Detail</ButtonPrimary> */}
-                    <Link to={`/exam/${ujian.id}`} className="text-sm underline underline-offset-2">
+                    <Link to={`/exam/${ujian.id}`} className="text-sm underline">
                       Lihat Detail
                     </Link>
                   </Card>
                 </motion.div>
               )
             })}
+          {sortedUjianList.filter((ujian) =>
+            ujian.attributes.nama_ujian.toLowerCase().includes(searchTerm.toLowerCase()),
+          ).length === 0 && <div className="mt-4 text-center text-gray-500">Ujian yang kamu cari tidak ada.</div>}
         </div>
       </div>
     </section>
