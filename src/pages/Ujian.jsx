@@ -1,19 +1,12 @@
-import FormUjian from '../components/Form/FormUjians'
-import FormUjianEx from '../components/Form/FormUjianExample'
-import { useAuth } from '../context/useAuth'
-import { Helmet } from 'react-helmet-async'
+import UjianList from '../components/Ujian/UjianList'
+import { useUjianContext } from '../context/ujianContext'
 
 const Ujian = () => {
-  const { isAuthenticated, token } = useAuth()
+  const { ujianData } = useUjianContext()
 
   return (
-    <div>
-      <Helmet>
-        <title>Ujian</title>
-      </Helmet>
-      {/* <FormUjian /> */}
-
-      <div className="grid h-screen place-items-center">Ujian</div>
+    <div className="flex flex-col px-6 md:items-center xl:px-0">
+      <UjianList ujianList={ujianData} />
     </div>
   )
 }

@@ -1,0 +1,1012 @@
+[
+  {
+    "id": 38,
+    "attributes": {
+      "nama_ujian": "Ujian Matematika",
+      "deskripsi": "Penguasaan konsep aljabar, geometri, dan kalkulus akan diuji dalam ujian ini. Sertakan pemecahan masalah matematika.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2023-12-18T06:15:00.000Z",
+      "pengawas": "Budi Setiawan",
+      "createdAt": "2023-12-18T05:14:06.821Z",
+      "updatedAt": "2023-12-18T07:30:16.160Z",
+      "hasil_ujian": {
+        "data": null
+      },
+      "ruang_ujian": {
+        "data": {
+          "id": 2,
+          "attributes": {
+            "createdAt": "2023-12-18T05:00:16.493Z",
+            "updatedAt": "2023-12-18T05:00:16.493Z",
+            "ruangan": "1"
+          }
+        }
+      },
+      "soal_ujians": {
+        "data": []
+      },
+      "soal": [
+        {
+          "id": 65,
+          "teks_pertanyaan": "Berapakah hasil dari 2 + 2?",
+          "pilihan_jawaban": ["3", "4", "5", "6", "7"],
+          "jawaban_benar": "4",
+          "poin_nilai": 4
+        },
+        {
+          "id": 66,
+          "teks_pertanyaan": "Sebuah persegi memiliki sisi dengan panjang 6 cm. Berapakah luasnya?",
+          "pilihan_jawaban": ["12", "18", "24", "30", "36"],
+          "jawaban_benar": "36",
+          "poin_nilai": 4
+        },
+        {
+          "id": 67,
+          "teks_pertanyaan": "Jika x = 3 dan y = 5, berapakah nilai dari x + y?",
+          "pilihan_jawaban": ["6", "7", "8", "9", "10"],
+          "jawaban_benar": "8",
+          "poin_nilai": 4
+        },
+        {
+          "id": 68,
+          "teks_pertanyaan": "Sebuah segitiga memiliki alas 10 cm dan tinggi 8 cm. Berapakah luasnya?",
+          "pilihan_jawaban": ["32", "40", "48", "56", "64"],
+          "jawaban_benar": "40",
+          "poin_nilai": 4
+        },
+        {
+          "id": 69,
+          "teks_pertanyaan": "Jika a = 4 dan b = 2, berapakah nilai dari a - b?",
+          "pilihan_jawaban": ["2", "3", "4", "5", "6"],
+          "jawaban_benar": "2",
+          "poin_nilai": 4
+        },
+        {
+          "id": 70,
+          "teks_pertanyaan": "Hasil dari 5 x 9 adalah...",
+          "pilihan_jawaban": ["35", "40", "45", "50", "55"],
+          "jawaban_benar": "45",
+          "poin_nilai": 4
+        },
+        {
+          "id": 71,
+          "teks_pertanyaan": "Berapakah akar kuadrat dari 81?",
+          "pilihan_jawaban": ["7", "8", "9", "10", "11"],
+          "jawaban_benar": "9",
+          "poin_nilai": 4
+        },
+        {
+          "id": 72,
+          "teks_pertanyaan": "Jika harga sebuah barang adalah Rp 250.000 dan diskon 20%, berapakah harga setelah diskon?",
+          "pilihan_jawaban": ["Rp 180.000", "Rp 200.000", "Rp 220.000", "Rp 240.000", "Rp 260.000"],
+          "jawaban_benar": "Rp 200.000",
+          "poin_nilai": 4
+        },
+        {
+          "id": 73,
+          "teks_pertanyaan": "Berapakah hasil dari 3^4?",
+          "pilihan_jawaban": ["27", "64", "81", "125", "256"],
+          "jawaban_benar": "81",
+          "poin_nilai": 4
+        },
+        {
+          "id": 74,
+          "teks_pertanyaan": "Jika panjang sebuah persegi panjang adalah 12 cm dan lebar 8 cm, berapakah kelilingnya?",
+          "pilihan_jawaban": ["28", "32", "36", "40", "44"],
+          "jawaban_benar": "40",
+          "poin_nilai": 4
+        },
+        {
+          "id": 75,
+          "teks_pertanyaan": "Jika sin 30° = 0,5, berapakah nilai dari cos 60°?",
+          "pilihan_jawaban": ["0", "0,5", "1", "1,5", "2"],
+          "jawaban_benar": "0,5",
+          "poin_nilai": 4
+        },
+        {
+          "id": 76,
+          "teks_pertanyaan": "Sebuah lingkaran memiliki diameter sepanjang 14 cm. Berapakah jari-jari lingkaran tersebut?",
+          "pilihan_jawaban": ["5", "7", "10", "12", "14"],
+          "jawaban_benar": "7",
+          "poin_nilai": 4
+        },
+        {
+          "id": 77,
+          "teks_pertanyaan": "Jika a = 5 dan b = 3, berapakah nilai dari a^2 + b^2?",
+          "pilihan_jawaban": ["19", "24", "30", "34", "40"],
+          "jawaban_benar": "34",
+          "poin_nilai": 4
+        },
+        {
+          "id": 78,
+          "teks_pertanyaan": "Berapakah volume sebuah kubus dengan panjang sisi 6 cm?",
+          "pilihan_jawaban": ["36", "72", "108", "144", "216"],
+          "jawaban_benar": "216",
+          "poin_nilai": 4
+        },
+        {
+          "id": 79,
+          "teks_pertanyaan": "Jika harga sebuah barang awalnya Rp 500.000 dan mengalami penurunan 15%, berapakah harga setelah penurunan?",
+          "pilihan_jawaban": ["Rp 375.000", "Rp 400.000", "Rp 425.000", "Rp 450.000", "Rp 475.000"],
+          "jawaban_benar": "Rp 425.000",
+          "poin_nilai": 4
+        },
+        {
+          "id": 80,
+          "teks_pertanyaan": "Berapakah hasil dari 8 ÷ 2?",
+          "pilihan_jawaban": ["2", "3", "4", "5", "6"],
+          "jawaban_benar": "4",
+          "poin_nilai": 4
+        },
+        {
+          "id": 81,
+          "teks_pertanyaan": "Jika x = 6 dan y = 2, berapakah nilai dari x / y?",
+          "pilihan_jawaban": ["2", "3", "4", "5", "6"],
+          "jawaban_benar": "3",
+          "poin_nilai": 4
+        },
+        {
+          "id": 82,
+          "teks_pertanyaan": "Sebuah trapesium memiliki panjang alas 10 cm, panjang sisi sejajar 6 cm, dan tinggi 8 cm. Berapakah luasnya?",
+          "pilihan_jawaban": ["36", "40", "48", "52", "56"],
+          "jawaban_benar": "48",
+          "poin_nilai": 4
+        },
+        {
+          "id": 83,
+          "teks_pertanyaan": "Jika x = 2, berapakah nilai dari x^3?",
+          "pilihan_jawaban": ["4", "6", "8", "10", "12"],
+          "jawaban_benar": "8",
+          "poin_nilai": 4
+        },
+        {
+          "id": 84,
+          "teks_pertanyaan": "Jika sebuah kubus memiliki panjang sisi 5 cm, berapakah luas permukaannya?",
+          "pilihan_jawaban": ["75", "100", "125", "150", "175"],
+          "jawaban_benar": "150",
+          "poin_nilai": 4
+        },
+        {
+          "id": 85,
+          "teks_pertanyaan": "Berapakah hasil dari 4! (4 faktorial)?",
+          "pilihan_jawaban": ["12", "24", "36", "48", "60"],
+          "jawaban_benar": "24",
+          "poin_nilai": 4
+        },
+        {
+          "id": 86,
+          "teks_pertanyaan": "Jika a = 7 dan b = 3, berapakah nilai dari a x b?",
+          "pilihan_jawaban": ["15", "18", "21", "24", "27"],
+          "jawaban_benar": "21",
+          "poin_nilai": 4
+        },
+        {
+          "id": 87,
+          "teks_pertanyaan": "Jika panjang segitiga siku-siku adalah 9 cm, dan tingginya 6 cm, berapakah panjang hipotenusa?",
+          "pilihan_jawaban": ["10", "12", "15", "18", "21"],
+          "jawaban_benar": "15",
+          "poin_nilai": 4
+        },
+        {
+          "id": 88,
+          "teks_pertanyaan": "Jika log10(x) = 2, berapakah nilai dari x?",
+          "pilihan_jawaban": ["10", "50", "100", "500", "1000"],
+          "jawaban_benar": "100",
+          "poin_nilai": 4
+        }
+      ],
+      "media": {
+        "data": null
+      }
+    }
+  },
+  {
+    "id": 39,
+    "attributes": {
+      "nama_ujian": "Ujian Bahasa Inggris",
+      "deskripsi": "Ujian ini menguji kemampuan Bahasa Inggris siswa pada berbagai aspek, termasuk pemahaman bacaan, tata bahasa, dan kosa kata.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2024-01-01T02:30:00.000Z",
+      "pengawas": "Novi",
+      "createdAt": "2023-12-18T05:18:28.108Z",
+      "updatedAt": "2023-12-18T05:18:59.729Z",
+      "hasil_ujian": {
+        "data": null
+      },
+      "ruang_ujian": {
+        "data": {
+          "id": 3,
+          "attributes": {
+            "createdAt": "2023-12-18T05:00:16.493Z",
+            "updatedAt": "2023-12-18T05:00:16.493Z",
+            "ruangan": "2"
+          }
+        }
+      },
+      "soal_ujians": {
+        "data": []
+      },
+      "soal": [
+        {
+          "id": 89,
+          "teks_pertanyaan": "Choose the correct word to complete the sentence: She ________ to the store every day.",
+          "pilihan_jawaban": ["go", "goes", "going", "gone", "been"],
+          "jawaban_benar": "goes",
+          "poin_nilai": 4
+        },
+        {
+          "id": 90,
+          "teks_pertanyaan": "What is the synonym of 'happy'?",
+          "pilihan_jawaban": ["sad", "angry", "joyful", "tired", "lonely"],
+          "jawaban_benar": "joyful",
+          "poin_nilai": 4
+        },
+        {
+          "id": 91,
+          "teks_pertanyaan": "Which sentence is grammatically correct?",
+          "pilihan_jawaban": [
+            "I am not agree with your decision.",
+            "I am not agreed with your decision.",
+            "I am not agreeing with your decision.",
+            "I do not agree with your decision.",
+            "I do not agreed with your decision."
+          ],
+          "jawaban_benar": "I do not agree with your decision.",
+          "poin_nilai": 4
+        },
+        {
+          "id": 92,
+          "teks_pertanyaan": "What is the correct form of the verb in parentheses? The students always (study) ________ hard for their exams.",
+          "pilihan_jawaban": ["study", "studies", "studying", "studied", "will study"],
+          "jawaban_benar": "study",
+          "poin_nilai": 4
+        },
+        {
+          "id": 93,
+          "teks_pertanyaan": "Choose the correct preposition: The cat is sitting ________ the table.",
+          "pilihan_jawaban": ["in", "on", "at", "by", "with"],
+          "jawaban_benar": "on",
+          "poin_nilai": 4
+        },
+        {
+          "id": 94,
+          "teks_pertanyaan": "What is the opposite of 'beautiful'?",
+          "pilihan_jawaban": ["ugly", "pretty", "lovely", "attractive", "gorgeous"],
+          "jawaban_benar": "ugly",
+          "poin_nilai": 4
+        },
+        {
+          "id": 95,
+          "teks_pertanyaan": "Complete the sentence: If it rains, we ________ to the cinema.",
+          "pilihan_jawaban": ["will go", "going", "go", "gone", "goes"],
+          "jawaban_benar": "will go",
+          "poin_nilai": 4
+        },
+        {
+          "id": 96,
+          "teks_pertanyaan": "Choose the correct form of the verb in parentheses: She ________ a book when I saw her.",
+          "pilihan_jawaban": ["read", "reads", "reading", "have read", "will read"],
+          "jawaban_benar": "was reading",
+          "poin_nilai": 4
+        },
+        {
+          "id": 97,
+          "teks_pertanyaan": "What is the correct plural form of 'child'?",
+          "pilihan_jawaban": ["childs", "childrens", "childs'", "children", "childes"],
+          "jawaban_benar": "children",
+          "poin_nilai": 4
+        },
+        {
+          "id": 98,
+          "teks_pertanyaan": "Which sentence is grammatically correct?",
+          "pilihan_jawaban": [
+            "He don't like coffee.",
+            "He doesn't likes coffee.",
+            "He doesn't like coffee.",
+            "He not likes coffee.",
+            "He not like coffee."
+          ],
+          "jawaban_benar": "He doesn't like coffee.",
+          "poin_nilai": 4
+        },
+        {
+          "id": 99,
+          "teks_pertanyaan": "Choose the correct word to complete the sentence: I have lived in this city ________ 2010.",
+          "pilihan_jawaban": ["since", "for", "in", "at", "on"],
+          "jawaban_benar": "since",
+          "poin_nilai": 4
+        },
+        {
+          "id": 100,
+          "teks_pertanyaan": "What is the correct order of the words to form a question? (you / go / did / yesterday / where)?",
+          "pilihan_jawaban": [
+            "Did you go where yesterday?",
+            "You go did where yesterday?",
+            "Where did you go yesterday?",
+            "Yesterday did you go where?",
+            "Yesterday where go you did?"
+          ],
+          "jawaban_benar": "Where did you go yesterday?",
+          "poin_nilai": 4
+        },
+        {
+          "id": 101,
+          "teks_pertanyaan": "What is the correct past tense of 'eat'?",
+          "pilihan_jawaban": ["eat", "ate", "eaten", "eating", "eats"],
+          "jawaban_benar": "ate",
+          "poin_nilai": 4
+        },
+        {
+          "id": 102,
+          "teks_pertanyaan": "Choose the correct modal verb to complete the sentence: You ________ finish your homework before watching TV.",
+          "pilihan_jawaban": ["can", "could", "may", "might", "should"],
+          "jawaban_benar": "should",
+          "poin_nilai": 4
+        },
+        {
+          "id": 103,
+          "teks_pertanyaan": "What is the correct form of the verb in parentheses? They ________ to the beach last weekend.",
+          "pilihan_jawaban": ["go", "going", "gone", "went", "will go"],
+          "jawaban_benar": "went",
+          "poin_nilai": 4
+        },
+        {
+          "id": 104,
+          "teks_pertanyaan": "What is the synonym of 'brave'?",
+          "pilihan_jawaban": ["fearful", "cowardly", "bold", "shy", "timid"],
+          "jawaban_benar": "bold",
+          "poin_nilai": 4
+        },
+        {
+          "id": 105,
+          "teks_pertanyaan": "Which sentence is grammatically correct?",
+          "pilihan_jawaban": [
+            "She don't has a car.",
+            "She hasn't a car.",
+            "She not have a car.",
+            "She not has a car.",
+            "She doesn't have a car."
+          ],
+          "jawaban_benar": "She doesn't have a car.",
+          "poin_nilai": 4
+        },
+        {
+          "id": 106,
+          "teks_pertanyaan": "What is the correct form of the verb in parentheses? My friends and I ________ a movie last night.",
+          "pilihan_jawaban": ["watch", "watches", "watching", "have watched", "will watch"],
+          "jawaban_benar": "watched",
+          "poin_nilai": 4
+        },
+        {
+          "id": 107,
+          "teks_pertanyaan": "Choose the correct word to complete the sentence: The cat is ________ the roof.",
+          "pilihan_jawaban": ["on", "in", "at", "by", "with"],
+          "jawaban_benar": "on",
+          "poin_nilai": 4
+        },
+        {
+          "id": 108,
+          "teks_pertanyaan": "What is the opposite of 'happy'?",
+          "pilihan_jawaban": ["sad", "angry", "joyful", "tired", "lonely"],
+          "jawaban_benar": "sad",
+          "poin_nilai": 4
+        },
+        {
+          "id": 109,
+          "teks_pertanyaan": "Complete the sentence: If I ________ you, I would apologize.",
+          "pilihan_jawaban": ["am", "is", "are", "were", "will be"],
+          "jawaban_benar": "were",
+          "poin_nilai": 4
+        },
+        {
+          "id": 110,
+          "teks_pertanyaan": "What is the correct form of the verb in parentheses? She ________ to the music when the phone rang.",
+          "pilihan_jawaban": ["listens", "listening", "listened", "will listen", "listen"],
+          "jawaban_benar": "was listening",
+          "poin_nilai": 4
+        },
+        {
+          "id": 111,
+          "teks_pertanyaan": "Choose the correct preposition: The book is ________ the shelf.",
+          "pilihan_jawaban": ["in", "on", "at", "by", "with"],
+          "jawaban_benar": "on",
+          "poin_nilai": 4
+        },
+        {
+          "id": 112,
+          "teks_pertanyaan": "What is the correct order of the words to form a question? (what / you / do / last night)?",
+          "pilihan_jawaban": [
+            "You what do last night?",
+            "What do you last night?",
+            "Do you what last night?",
+            "Last night do you what?",
+            "Do what you last night?"
+          ],
+          "jawaban_benar": "What did you do last night?",
+          "poin_nilai": 4
+        },
+        {
+          "id": 113,
+          "teks_pertanyaan": "What is the correct past participle of 'drink'?",
+          "pilihan_jawaban": ["drink", "drank", "drunk", "drinking", "drinks"],
+          "jawaban_benar": "drunk",
+          "poin_nilai": 4
+        },
+        {
+          "id": 114,
+          "teks_pertanyaan": "Choose the correct modal verb to complete the sentence: You ________ come to the party if you don't want to.",
+          "pilihan_jawaban": ["can't", "must", "may", "should", "shall"],
+          "jawaban_benar": "shouldn't",
+          "poin_nilai": 4
+        }
+      ],
+      "media": {
+        "data": null
+      }
+    }
+  },
+  {
+    "id": 40,
+    "attributes": {
+      "nama_ujian": "Ujian Bahasa Jepang",
+      "deskripsi": "Ujian ini bertujuan untuk mengukur kemampuan siswa dalam memahami dan menggunakan Bahasa Jepang, termasuk keterampilan membaca, mendengarkan, dan berbicara.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2023-12-21T00:10:00.000Z",
+      "pengawas": "Sensei/Sensei Pengawas",
+      "createdAt": "2023-12-18T05:20:50.595Z",
+      "updatedAt": "2023-12-21T01:16:33.681Z",
+      "hasil_ujian": {
+        "data": null
+      },
+      "ruang_ujian": {
+        "data": {
+          "id": 4,
+          "attributes": {
+            "createdAt": "2023-12-18T05:00:16.493Z",
+            "updatedAt": "2023-12-18T05:00:16.493Z",
+            "ruangan": "3"
+          }
+        }
+      },
+      "soal_ujians": {
+        "data": []
+      },
+      "soal": [
+        {
+          "id": 115,
+          "teks_pertanyaan": "次の単語の中で、違うものを選んでください：車、電車、バス、飛行機、自転車",
+          "pilihan_jawaban": ["車", "電車", "バス", "飛行機", "自転車"],
+          "jawaban_benar": "飛行機",
+          "poin_nilai": 4
+        },
+        {
+          "id": 116,
+          "teks_pertanyaan": "次の文の空白に入るべき漢字を選んでください：彼は毎日勉強______。",
+          "pilihan_jawaban": ["する", "して", "します", "される", "されて"],
+          "jawaban_benar": "して",
+          "poin_nilai": 4
+        },
+        {
+          "id": 117,
+          "teks_pertanyaan": "次の動詞を使って文を完成させてください：私は昨日映画を______。",
+          "pilihan_jawaban": ["見ます", "見た", "見る", "見て", "見ない"],
+          "jawaban_benar": "見ました",
+          "poin_nilai": 4
+        },
+        {
+          "id": 118,
+          "teks_pertanyaan": "次の日本の都市の中で、首都ではないものを選んでください：東京、大阪、京都、福岡、札幌",
+          "pilihan_jawaban": ["東京", "大阪", "京都", "福岡", "札幌"],
+          "jawaban_benar": "福岡",
+          "poin_nilai": 4
+        },
+        {
+          "id": 119,
+          "teks_pertanyaan": "「犬」と「猫」の違いは何ですか？",
+          "pilihan_jawaban": ["色", "大きさ", "音", "におい", "食べ物"],
+          "jawaban_benar": "食べ物",
+          "poin_nilai": 4
+        },
+        {
+          "id": 120,
+          "teks_pertanyaan": "次の日本の祝日の中で、春にあるものを選んでください：正月、ひな祭り、こどもの日、敬老の日、文化の日",
+          "pilihan_jawaban": ["正月", "ひな祭り", "こどもの日", "敬老の日", "文化の日"],
+          "jawaban_benar": "ひな祭り",
+          "poin_nilai": 4
+        },
+        {
+          "id": 121,
+          "teks_pertanyaan": "次の動詞の中で、五段活用動詞を選んでください：飲む、書く、行く、来る、話す",
+          "pilihan_jawaban": ["飲む", "書く", "行く", "来る", "話す"],
+          "jawaban_benar": "飲む",
+          "poin_nilai": 4
+        },
+        {
+          "id": 122,
+          "teks_pertanyaan": "次の日本の伝統衣装は何ですか？",
+          "pilihan_jawaban": ["ユニフォーム", "浴衣", "ジーンズ", "スーツ", "ドレス"],
+          "jawaban_benar": "浴衣",
+          "poin_nilai": 4
+        },
+        {
+          "id": 123,
+          "teks_pertanyaan": "次の言葉の意味を選んでください：元気",
+          "pilihan_jawaban": ["おはよう", "ありがとう", "ごめんなさい", "こんにちは", "元気"],
+          "jawaban_benar": "元気",
+          "poin_nilai": 4
+        },
+        {
+          "id": 124,
+          "teks_pertanyaan": "次のアニメの中で、有名なものを選んでください：ドラえもん、ワンピース、ナルト、ブリーチ、デスノート",
+          "pilihan_jawaban": ["ドラえもん", "ワンピース", "ナルト", "ブリーチ", "デスノート"],
+          "jawaban_benar": "ドラえもん",
+          "poin_nilai": 4
+        },
+        {
+          "id": 125,
+          "teks_pertanyaan": "次のフルーツの中で、赤いものを選んでください：りんご、バナナ、みかん、ぶどう、すいか",
+          "pilihan_jawaban": ["りんご", "バナナ", "みかん", "ぶどう", "すいか"],
+          "jawaban_benar": "りんご",
+          "poin_nilai": 4
+        },
+        {
+          "id": 126,
+          "teks_pertanyaan": "次の文を英語に翻訳してください：私の家は大きいです。",
+          "pilihan_jawaban": [
+            "My house is big.",
+            "I have a big house.",
+            "Big house is mine.",
+            "House big is my.",
+            "I house big have."
+          ],
+          "jawaban_benar": "My house is big.",
+          "poin_nilai": 4
+        },
+        {
+          "id": 127,
+          "teks_pertanyaan": "次の言葉の中で、動物を選んでください：花、山、川、魚、空",
+          "pilihan_jawaban": ["花", "山", "川", "魚", "空"],
+          "jawaban_benar": "魚",
+          "poin_nilai": 4
+        },
+        {
+          "id": 128,
+          "teks_pertanyaan": "次の質問に対する答えとして適切なものを選んでください：「あなたは何歳ですか？」",
+          "pilihan_jawaban": [
+            "はい、元気です。",
+            "ありがとう、お願いします。",
+            "私は20歳です。",
+            "おはようございます。",
+            "ごめんなさい、分かりません。"
+          ],
+          "jawaban_benar": "私は20歳です。",
+          "poin_nilai": 4
+        },
+        {
+          "id": 129,
+          "teks_pertanyaan": "「おはようございます」という日本の挨拶は何時まで使いますか？",
+          "pilihan_jawaban": ["午前11時", "午後12時", "午後1時", "午後6時", "いつでも"],
+          "jawaban_benar": "午前11時",
+          "poin_nilai": 4
+        },
+        {
+          "id": 130,
+          "teks_pertanyaan": "次の日本の食べ物の中で、寿司を含むものを選んでください：ラーメン、寿司、うどん、そば、おにぎり",
+          "pilihan_jawaban": ["ラーメン", "寿司", "うどん", "そば", "おにぎり"],
+          "jawaban_benar": "寿司",
+          "poin_nilai": 4
+        },
+        {
+          "id": 131,
+          "teks_pertanyaan": "次の数を漢字で書いてください：50",
+          "pilihan_jawaban": ["五", "十", "百", "千", "五十"],
+          "jawaban_benar": "五十",
+          "poin_nilai": 4
+        },
+        {
+          "id": 132,
+          "teks_pertanyaan": "次の日本の季節の中で、桜が咲く季節はどれですか？",
+          "pilihan_jawaban": ["春", "夏", "秋", "冬", "いつも"],
+          "jawaban_benar": "春",
+          "poin_nilai": 4
+        },
+        {
+          "id": 133,
+          "teks_pertanyaan": "次の会話の中で、友達に何を尋ねているか選んでください：「これは何ですか？」",
+          "pilihan_jawaban": ["名前", "趣味", "仕事", "国", "食べ物"],
+          "jawaban_benar": "名前",
+          "poin_nilai": 4
+        },
+        {
+          "id": 134,
+          "teks_pertanyaan": "次の動詞の中で、一段活用動詞を選んでください：食べる、行く、来る、見る、話す",
+          "pilihan_jawaban": ["食べる", "行く", "来る", "見る", "話す"],
+          "jawaban_benar": "食べる",
+          "poin_nilai": 4
+        },
+        {
+          "id": 135,
+          "teks_pertanyaan": "次の日本の文化の中で、お茶を楽しむ儀式は何ですか？",
+          "pilihan_jawaban": ["花見", "お正月", "茶道", "着物", "お盆"],
+          "jawaban_benar": "茶道",
+          "poin_nilai": 4
+        },
+        {
+          "id": 136,
+          "teks_pertanyaan": "次の日本の言葉の意味を選んでください：ありがとう",
+          "pilihan_jawaban": ["ごめんなさい", "お疲れ様", "ありがとう", "おはよう", "さようなら"],
+          "jawaban_benar": "ありがとう",
+          "poin_nilai": 4
+        }
+      ],
+      "media": {
+        "data": null
+      }
+    }
+  },
+  {
+    "id": 41,
+    "attributes": {
+      "nama_ujian": "Ujian Teori Pemrograman Web",
+      "deskripsi": "Ujian ini mengevaluasi pengetahuan siswa tentang konsep-konsep dasar dan teori pemrograman web.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2023-01-01T06:15:00.000Z",
+      "pengawas": "Ibu/Bu Pengawas",
+      "createdAt": "2023-12-18T06:41:44.264Z",
+      "updatedAt": "2023-12-18T07:39:55.872Z",
+      "hasil_ujian": {
+        "data": null
+      },
+      "ruang_ujian": {
+        "data": null
+      },
+      "soal_ujians": {
+        "data": []
+      },
+      "soal": [
+        {
+          "id": 137,
+          "teks_pertanyaan": "Apa singkatan dari HTML?",
+          "pilihan_jawaban": [
+            "Hyper Text Markup Language",
+            "High-level Text Markup Language",
+            "Home Tool Markup Language",
+            "Hyper Transfer Markup Language",
+            "Hypertext and Text Markup Language"
+          ],
+          "jawaban_benar": "Hyper Text Markup Language",
+          "poin_nilai": 4
+        },
+        {
+          "id": 138,
+          "teks_pertanyaan": "Apa peran CSS dalam pengembangan web?",
+          "pilihan_jawaban": [
+            "Menangani logika dan fungsionalitas",
+            "Mengatur tata letak dan penataan halaman",
+            "Menangani sisi server",
+            "Mengelola database",
+            "Mengontrol lalu lintas web"
+          ],
+          "jawaban_benar": "Mengatur tata letak dan penataan halaman",
+          "poin_nilai": 4
+        },
+        {
+          "id": 139,
+          "teks_pertanyaan": "Apa fungsi JavaScript?",
+          "pilihan_jawaban": [
+            "Mengatur tampilan halaman web",
+            "Menangani logika dan fungsionalitas",
+            "Mengelola basis data",
+            "Mengontrol sisi server",
+            "Mengedit gambar"
+          ],
+          "jawaban_benar": "Menangani logika dan fungsionalitas",
+          "poin_nilai": 4
+        },
+        {
+          "id": 140,
+          "teks_pertanyaan": "Apa itu HTTP?",
+          "pilihan_jawaban": [
+            "Hypertext Transfer Protocol",
+            "Hyper Text Transfer Product",
+            "Home Transfer Text Protocol",
+            "Hypertext Text Transfer Protocol",
+            "High-level Text Transfer Protocol"
+          ],
+          "jawaban_benar": "Hypertext Transfer Protocol",
+          "poin_nilai": 4
+        },
+        {
+          "id": 141,
+          "teks_pertanyaan": "Apa kegunaan tag <head> dalam HTML?",
+          "pilihan_jawaban": [
+            "Menampilkan teks utama halaman",
+            "Menyimpan konten utama halaman",
+            "Menyimpan informasi meta dan stylesheet",
+            "Menyimpan skrip JavaScript",
+            "Menampilkan gambar utama halaman"
+          ],
+          "jawaban_benar": "Menyimpan informasi meta dan stylesheet",
+          "poin_nilai": 4
+        },
+        {
+          "id": 142,
+          "teks_pertanyaan": "Apa perbedaan antara GET dan POST dalam HTTP?",
+          "pilihan_jawaban": [
+            "GET digunakan untuk mengirim data formulir, POST digunakan untuk mendapatkan data",
+            "GET dapat menampilkan data di URL, POST tidak dapat menampilkannya",
+            "GET bersifat idempoten, POST tidak bersifat idempoten",
+            "GET digunakan untuk menyimpan data, POST untuk mengambil data",
+            "GET lebih aman daripada POST"
+          ],
+          "jawaban_benar": "GET bersifat idempoten, POST tidak bersifat idempoten",
+          "poin_nilai": 4
+        },
+        {
+          "id": 143,
+          "teks_pertanyaan": "Apa yang dimaksud dengan responsive web design?",
+          "pilihan_jawaban": [
+            "Desain web yang cepat diakses",
+            "Desain web yang berubah sesuai waktu",
+            "Desain web yang dapat menyesuaikan tampilan dengan berbagai perangkat",
+            "Desain web yang responsif terhadap umpan balik pengguna",
+            "Desain web yang responsif terhadap kondisi cuaca"
+          ],
+          "jawaban_benar": "Desain web yang dapat menyesuaikan tampilan dengan berbagai perangkat",
+          "poin_nilai": 4
+        },
+        {
+          "id": 144,
+          "teks_pertanyaan": "Apa itu AJAX?",
+          "pilihan_jawaban": [
+            "Asynchronous JavaScript and XML",
+            "Asynchronous Java and XML",
+            "Advanced JavaScript and XML",
+            "Automated JavaScript and XML",
+            "Ajax is not an acronym"
+          ],
+          "jawaban_benar": "Asynchronous JavaScript and XML",
+          "poin_nilai": 4
+        },
+        {
+          "id": 145,
+          "teks_pertanyaan": "Apa itu SQL?",
+          "pilihan_jawaban": [
+            "Structured Query Language",
+            "Sequential Query Language",
+            "System Query Language",
+            "Structured Question Language",
+            "Sequential Question Language"
+          ],
+          "jawaban_benar": "Structured Query Language",
+          "poin_nilai": 4
+        },
+        {
+          "id": 146,
+          "teks_pertanyaan": "Apa peran atribut 'src' pada tag <script> dalam HTML?",
+          "pilihan_jawaban": [
+            "Menentukan sumber file gambar",
+            "Menentukan sumber file audio",
+            "Menentukan sumber file video",
+            "Menentukan sumber file skrip JavaScript",
+            "Menentukan sumber file teks"
+          ],
+          "jawaban_benar": "Menentukan sumber file skrip JavaScript",
+          "poin_nilai": 4
+        },
+        {
+          "id": 147,
+          "teks_pertanyaan": "Apa itu cookie dalam konteks web development?",
+          "pilihan_jawaban": [
+            "Sebuah file gambar",
+            "Sebuah file audio",
+            "Sebuah file video",
+            "Sebuah data kecil yang disimpan pada browser pengguna",
+            "Sebuah data besar yang disimpan pada server"
+          ],
+          "jawaban_benar": "Sebuah data kecil yang disimpan pada browser pengguna",
+          "poin_nilai": 4
+        },
+        {
+          "id": 148,
+          "teks_pertanyaan": "Apa itu Git?",
+          "pilihan_jawaban": [
+            "Sebuah bahasa pemrograman",
+            "Sebuah sistem manajemen basis data",
+            "Sebuah sistem operasi",
+            "Sebuah sistem kontrol versi",
+            "Sebuah program grafis"
+          ],
+          "jawaban_benar": "Sebuah sistem kontrol versi",
+          "poin_nilai": 4
+        },
+        {
+          "id": 149,
+          "teks_pertanyaan": "Apa itu framework web?",
+          "pilihan_jawaban": [
+            "Sebuah platform permainan online",
+            "Sebuah kerangka kerja pengembangan web",
+            "Sebuah program pengedit teks",
+            "Sebuah sistem manajemen basis data",
+            "Sebuah program desain grafis"
+          ],
+          "jawaban_benar": "Sebuah kerangka kerja pengembangan web",
+          "poin_nilai": 4
+        },
+        {
+          "id": 150,
+          "teks_pertanyaan": "Apa perbedaan antara margin dan padding dalam CSS?",
+          "pilihan_jawaban": [
+            "Margin adalah ruang di dalam elemen, sedangkan padding adalah ruang di sekitar elemen",
+            "Margin adalah ruang di sekitar elemen, sedangkan padding adalah ruang di dalam elemen",
+            "Margin dan padding memiliki fungsi yang sama",
+            "Margin digunakan untuk mengatur warna latar belakang, sedangkan padding untuk mengatur warna teks",
+            "Tidak ada perbedaan antara margin dan padding"
+          ],
+          "jawaban_benar": "Margin adalah ruang di sekitar elemen, sedangkan padding adalah ruang di dalam elemen",
+          "poin_nilai": 4
+        },
+        {
+          "id": 151,
+          "teks_pertanyaan": "Apa yang dimaksud dengan HTTPS?",
+          "pilihan_jawaban": [
+            "Hypertext Transfer Protocol Secure",
+            "High-level Text Transfer Protocol Secure",
+            "Hypertext Text Transfer Protocol Secure",
+            "Hypertext Transfer Product Secure",
+            "High-level Transfer Product Secure"
+          ],
+          "jawaban_benar": "Hypertext Transfer Protocol Secure",
+          "poin_nilai": 4
+        },
+        {
+          "id": 152,
+          "teks_pertanyaan": "Apa itu UX Design?",
+          "pilihan_jawaban": [
+            "User Experience Design",
+            "User Expert Design",
+            "Universal Experience Design",
+            "User Exploration Design",
+            "User Exception Design"
+          ],
+          "jawaban_benar": "User Experience Design",
+          "poin_nilai": 4
+        },
+        {
+          "id": 153,
+          "teks_pertanyaan": "Apa itu DNS?",
+          "pilihan_jawaban": [
+            "Domain Name System",
+            "Dynamic Naming System",
+            "Digital Network System",
+            "Domain Naming System",
+            "Directory Name System"
+          ],
+          "jawaban_benar": "Domain Name System",
+          "poin_nilai": 4
+        },
+        {
+          "id": 154,
+          "teks_pertanyaan": "Apa peran atribut 'alt' pada tag <img> dalam HTML?",
+          "pilihan_jawaban": [
+            "Menentukan alamat URL gambar",
+            "Menentukan teks alternatif untuk gambar",
+            "Menentukan jenis gambar",
+            "Menentukan warna latar belakang gambar",
+            "Menentukan ukuran gambar"
+          ],
+          "jawaban_benar": "Menentukan teks alternatif untuk gambar",
+          "poin_nilai": 4
+        },
+        {
+          "id": 155,
+          "teks_pertanyaan": "Apa itu framework JavaScript populer yang digunakan untuk membangun antarmuka pengguna?",
+          "pilihan_jawaban": ["Angular", "Express", "Django", "Flask", "Ruby on Rails"],
+          "jawaban_benar": "Angular",
+          "poin_nilai": 4
+        },
+        {
+          "id": 156,
+          "teks_pertanyaan": "Apa itu HTTP status code 404?",
+          "pilihan_jawaban": ["Forbidden", "Internal Server Error", "Not Found", "OK", "Unauthorized"],
+          "jawaban_benar": "Not Found",
+          "poin_nilai": 4
+        },
+        {
+          "id": 157,
+          "teks_pertanyaan": "Apa perbedaan antara margin:auto dan margin:0 auto dalam CSS?",
+          "pilihan_jawaban": [
+            "Tidak ada perbedaan",
+            "margin:auto digunakan untuk elemen blok, margin:0 auto digunakan untuk elemen inline",
+            "margin:auto digunakan untuk mengatur margin luar, margin:0 auto digunakan untuk mengatur margin dalam",
+            "margin:auto digunakan untuk mengatur margin dalam, margin:0 auto digunakan untuk mengatur margin luar",
+            "margin:auto digunakan untuk mengatur margin dalam, sedangkan margin:0 auto digunakan untuk mengatur margin luar"
+          ],
+          "jawaban_benar": "margin:auto digunakan untuk mengatur margin dalam, sedangkan margin:0 auto digunakan untuk mengatur margin luar",
+          "poin_nilai": 4
+        },
+        {
+          "id": 158,
+          "teks_pertanyaan": "Apa itu Metode HTTP 'PUT' digunakan untuk?",
+          "pilihan_jawaban": [
+            "Membuat sumber daya baru atau mengganti sumber daya yang sudah ada",
+            "Menghapus sumber daya",
+            "Mendapatkan informasi tentang sumber daya",
+            "Mengirimkan data ke server",
+            "Mengambil data dari server"
+          ],
+          "jawaban_benar": "Membuat sumber daya baru atau mengganti sumber daya yang sudah ada",
+          "poin_nilai": 4
+        }
+      ],
+      "media": {
+        "data": {
+          "id": 4,
+          "attributes": {
+            "name": "Screenshot from 2023-12-18 12-06-06.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 1920,
+            "height": 1080,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_Screenshot from 2023-12-18 12-06-06.png",
+                "hash": "thumbnail_Screenshot_from_2023_12_18_12_06_06_b4505e40fb",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 245,
+                "height": 138,
+                "size": 22.85,
+                "url": "/uploads/thumbnail_Screenshot_from_2023_12_18_12_06_06_b4505e40fb.png"
+              },
+              "small": {
+                "name": "small_Screenshot from 2023-12-18 12-06-06.png",
+                "hash": "small_Screenshot_from_2023_12_18_12_06_06_b4505e40fb",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 500,
+                "height": 281,
+                "size": 60.04,
+                "url": "/uploads/small_Screenshot_from_2023_12_18_12_06_06_b4505e40fb.png"
+              },
+              "medium": {
+                "name": "medium_Screenshot from 2023-12-18 12-06-06.png",
+                "hash": "medium_Screenshot_from_2023_12_18_12_06_06_b4505e40fb",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 750,
+                "height": 422,
+                "size": 114.06,
+                "url": "/uploads/medium_Screenshot_from_2023_12_18_12_06_06_b4505e40fb.png"
+              },
+              "large": {
+                "name": "large_Screenshot from 2023-12-18 12-06-06.png",
+                "hash": "large_Screenshot_from_2023_12_18_12_06_06_b4505e40fb",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 1000,
+                "height": 563,
+                "size": 178.55,
+                "url": "/uploads/large_Screenshot_from_2023_12_18_12_06_06_b4505e40fb.png"
+              }
+            },
+            "hash": "Screenshot_from_2023_12_18_12_06_06_b4505e40fb",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 62.44,
+            "url": "/uploads/Screenshot_from_2023_12_18_12_06_06_b4505e40fb.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-12-18T07:39:52.201Z",
+            "updatedAt": "2023-12-18T07:39:52.201Z"
+          }
+        }
+      }
+    }
+  }
+]

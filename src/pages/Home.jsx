@@ -12,37 +12,28 @@ import {
   UpcomingTags,
 } from '../components/Tag/Tags'
 import ButtonPrimary from '../components/UI/Button'
+import { useUjianContext } from '../context/ujianContext'
 
 const App = () => {
-  const [daftarUjian, setDaftarUjian] = useState(null)
+  const { ujianData } = useUjianContext()
+  const [daftarujian, setDaftarUjian] = useState([])
 
   useEffect(() => {
-    const fetchDaftarUjian = async () => {
-      try {
-        const response = await fetch('http://localhost:1337/api/ujianss')
-        const json = await response.json()
+    const sortedUjian = [...ujianData].sort((a, b) => {
+      const dateA = new Date(a.attributes.waktu_mulai)
+      const dateB = new Date(b.attributes.waktu_mulai)
+      return dateB - dateA
+    })
 
-        // Ambil seluruh data ujian dari response
-        const allUjian = json.data
+    // Ambil 3 ujian pertama setelah diurutkan
+    const limitedData = sortedUjian.slice(0, 3)
 
-        // Acak urutan array
-        const shuffledUjian = allUjian.sort(() => Math.random() - 0.5)
-
-        // Ambil 3 ujian pertama setelah diacak
-        const limitedData = shuffledUjian.slice(0, 3)
-
-        setDaftarUjian(limitedData)
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
-    }
-
-    fetchDaftarUjian()
-  }, [])
+    setDaftarUjian(limitedData)
+  }, [ujianData])
 
   return (
     <main className="flex flex-col px-6 md:items-center xl:px-0">
-      <div className="w-full pt-32 pb-20  xl:py-52">
+      <div className="w-full pb-20 xl:py-36">
         <div className="min-w-sm mx-auto md:text-center xl:max-w-screen-lg ">
           <h1 className="mb-4 text-4xl font-bold text-black xl:text-5xl/[1.3]">
             <span className="hidden md:inline-block">Selamat Datang di </span> Stemanika Exam Portal Ujian Sekolah{' '}
@@ -52,12 +43,12 @@ const App = () => {
             Platform ujian sekolah khusus untuk siswa SMKN 1 Majalengka. Nikmati kemudahan mengikuti ujian online secara
             efisien dan praktis.
           </p>
-          <Link to="/ujian">
+          <Link to="/exam">
             <ButtonPrimary>Lihat Ujian</ButtonPrimary>
           </Link>
         </div>
       </div>
-      <section className=" ">
+      <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20">
         <div className="min-w-sm w-full">
           <h1 className="mb-2 text-2xl font-bold text-black xl:text-center xl:text-4xl">Mengapa Stemanika Exam?</h1>
           <p className="mb-6 text-sm text-gray-500 xl:mb-14 xl:text-center xl:text-base">
@@ -74,10 +65,10 @@ const App = () => {
               viewport={{ once: true }}
             >
               <Card>
-                <div className="mb-4 xl:text-center">
+                <div className="xl:py-6 xl:text-center">
                   <h1 className="mb-2 mt-4 text-2xl font-bold text-black xl:text-3xl">Fleksibilitas</h1>
 
-                  <p className="mb-6 text-sm text-gray-500 xl:mb-14 xl:text-center xl:text-base">
+                  <p className="mb-6 text-sm text-gray-500 xl:mb-0 xl:text-center xl:text-base">
                     Stemanika Exam memberikan fleksibilitas dalam penjadwalan ujian. Peserta dapat mengakses platform
                     sesuai dengan jadwal ujian yang telah ditentukan
                   </p>
@@ -94,10 +85,10 @@ const App = () => {
               viewport={{ once: true }}
             >
               <Card>
-                <div className="mb-4 xl:text-center">
+                <div className="xl:py-6 xl:text-center">
                   <h1 className="mb-2 mt-4 text-2xl font-bold text-black xl:text-3xl">Pembaruan Hasil Ujian</h1>
 
-                  <p className="mb-6 text-sm text-gray-500 xl:mb-14 xl:text-center xl:text-base">
+                  <p className="mb-6 text-sm text-gray-500 xl:mb-0 xl:text-center xl:text-base">
                     Kami menyajikan hasil ujian dengan cepat dan akurat. Peserta dapat segera melihat hasil dan analisis
                     kinerja mereka 4 hari setelah menyelesaikan ujian.
                   </p>
@@ -114,10 +105,10 @@ const App = () => {
               viewport={{ once: true }}
             >
               <Card>
-                <div className="mb-4 xl:text-center">
+                <div className="xl:py-6 xl:text-center">
                   <h1 className="mb-2 mt-4 text-2xl font-bold text-black xl:text-3xl">Kemudahan Pengguna</h1>
 
-                  <p className="mb-6 text-sm text-gray-500 xl:mb-14 xl:text-center xl:text-base">
+                  <p className="mb-6 text-sm text-gray-500 xl:mb-0 xl:text-center xl:text-base">
                     Stemanika Exam dirancang agar mudah digunakan tanpa memerlukan proses yang rumit. Peserta dapat
                     dengan cepat mengakses ujian mereka dengan beberapa klik saja.
                   </p>
@@ -127,13 +118,13 @@ const App = () => {
           </div>
         </div>
       </section>
-      {daftarUjian ? (
+      {daftarujian ? (
         <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20">
           <div className="min-w-sm mb-6 w-full xl:mb-14">
             <h1 className="mb-2 text-2xl font-bold text-black xl:text-3xl">Daftar Ujian</h1>
             <p className="mb-6  text-sm text-gray-500 xl:text-base">Mari Bersiap, Pekan Ini Penuh Keajaiban Belajar!</p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
-              {daftarUjian.map((ujian) => {
+              {daftarujian.map((ujian) => {
                 let tagComponent = null
 
                 const currentTime = new Date()
@@ -188,114 +179,115 @@ const App = () => {
               })}
             </div>
           </div>
-          <Link to={'/ujian'}>
+          <Link to={'/exam'}>
             <ButtonPrimary> Lihat Semua Ujian</ButtonPrimary>
           </Link>
         </section>
       ) : (
         <>
-        
-        <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20">
-          <div className="min-w-sm mb-6 w-full xl:mb-14">
-            <h1 className="mb-2 text-2xl font-bold text-black xl:text-3xl">Daftar Ujian</h1>
-            <p className="mb-6  text-sm text-gray-500 xl:text-base">Mari Bersiap, Pekan Ini Penuh Keajaiban Belajar!</p>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.4,
-                }}
-                viewport={{ once: true }}
-              >
-                <Card>
-                  <div className="mb-10">
-                    <CompletedTags />
-                    <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
+          <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20">
+            <div className="min-w-sm mb-6 w-full xl:mb-14">
+              <h1 className="mb-2 text-2xl font-bold text-black xl:text-3xl">Daftar Ujian</h1>
+              <p className="mb-6  text-sm text-gray-500 xl:text-base">
+                Mari Bersiap, Pekan Ini Penuh Keajaiban Belajar!
+              </p>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.4,
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <Card>
+                    <div className="mb-10">
+                      <CompletedTags />
+                      <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
 
-                    <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
-                      nostrum dolor aliquam? Voluptatum quidem iure perspiciatis!
-                    </p>
-                  </div>
-                  <div>
-                    <p className="mb-2 text-sm font-medium text-black">
-                      Tanggal: {format(new Date(), 'dd MMMM yyyy', { locale: id })}
-                    </p>
-                    <p className="mb-2 text-sm font-medium text-black">
-                      Pukul: {format(new Date(), 'HH:mm', { locale: id })} WIB
-                    </p>
-                    <p className="mb-2 text-sm font-medium text-black">Durasi Pengerjaan: 60 menit</p>
-                  </div>
-                </Card>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.4,
-                }}
-                viewport={{ once: true }}
-              >
-                <Card>
-                  <div className="mb-10">
-                    <UpcomingTags />
-                    <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
+                      <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
+                        nostrum dolor aliquam? Voluptatum quidem iure perspiciatis!
+                      </p>
+                    </div>
+                    <div>
+                      <p className="mb-2 text-sm font-medium text-black">
+                        Tanggal: {format(new Date(), 'dd MMMM yyyy', { locale: id })}
+                      </p>
+                      <p className="mb-2 text-sm font-medium text-black">
+                        Pukul: {format(new Date(), 'HH:mm', { locale: id })} WIB
+                      </p>
+                      <p className="mb-2 text-sm font-medium text-black">Durasi Pengerjaan: 60 menit</p>
+                    </div>
+                  </Card>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.4,
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <Card>
+                    <div className="mb-10">
+                      <UpcomingTags />
+                      <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
 
-                    <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
-                      nostrum dolor aliquam? Voluptatum quidem iure perspiciatis!
-                    </p>
-                  </div>
-                  <div>
-                    <p className="mb-2 text-sm font-medium text-black">
-                      Tanggal: {format(new Date(), 'dd MMMM yyyy', { locale: id })}
-                    </p>
-                    <p className="mb-2 text-sm font-medium text-black">
-                      Pukul: {format(new Date(), 'HH:mm', { locale: id })} WIB
-                    </p>
-                    <p className="mb-2 text-sm font-medium text-black">Durasi Pengerjaan: 60 menit</p>
-                  </div>
-                </Card>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.4,
-                }}
-                viewport={{ once: true }}
-              >
-                <Card>
-                  <div className="mb-10">
-                    <LastMinutePreparationTags />
-                    <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
+                      <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
+                        nostrum dolor aliquam? Voluptatum quidem iure perspiciatis!
+                      </p>
+                    </div>
+                    <div>
+                      <p className="mb-2 text-sm font-medium text-black">
+                        Tanggal: {format(new Date(), 'dd MMMM yyyy', { locale: id })}
+                      </p>
+                      <p className="mb-2 text-sm font-medium text-black">
+                        Pukul: {format(new Date(), 'HH:mm', { locale: id })} WIB
+                      </p>
+                      <p className="mb-2 text-sm font-medium text-black">Durasi Pengerjaan: 60 menit</p>
+                    </div>
+                  </Card>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.4,
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <Card>
+                    <div className="mb-10">
+                      <LastMinutePreparationTags />
+                      <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
 
-                    <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
-                      nostrum dolor aliquam? Voluptatum quidem iure perspiciatis!
-                    </p>
-                  </div>
-                  <div>
-                    <p className="mb-2 text-sm font-medium text-black">
-                      Tanggal: {format(new Date(), 'dd MMMM yyyy', { locale: id })}
-                    </p>
-                    <p className="mb-2 text-sm font-medium text-black">
-                      Pukul: {format(new Date(), 'HH:mm', { locale: id })} WIB
-                    </p>
-                    <p className="mb-2 text-sm font-medium text-black">Durasi Pengerjaan: 60 menit</p>
-                  </div>
-                </Card>
-              </motion.div>
+                      <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
+                        nostrum dolor aliquam? Voluptatum quidem iure perspiciatis!
+                      </p>
+                    </div>
+                    <div>
+                      <p className="mb-2 text-sm font-medium text-black">
+                        Tanggal: {format(new Date(), 'dd MMMM yyyy', { locale: id })}
+                      </p>
+                      <p className="mb-2 text-sm font-medium text-black">
+                        Pukul: {format(new Date(), 'HH:mm', { locale: id })} WIB
+                      </p>
+                      <p className="mb-2 text-sm font-medium text-black">Durasi Pengerjaan: 60 menit</p>
+                    </div>
+                  </Card>
+                </motion.div>
+              </div>
             </div>
-          </div>
-          <Link to={'/ujian'}>
-            <ButtonPrimary> Lihat Semua Ujian</ButtonPrimary>
-          </Link>
-        </section>
+            <Link to={'/ujian'}>
+              <ButtonPrimary> Lihat Semua Ujian</ButtonPrimary>
+            </Link>
+          </section>
         </>
       )}
       <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20">

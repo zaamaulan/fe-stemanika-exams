@@ -1,11 +1,10 @@
-import React from 'react'
 import Card from '../components/Card/Card'
 import ButtonPrimary from '../components/UI/Button'
 
 const About = () => {
   return (
     <main className="flex flex-col px-6 md:items-center xl:px-0">
-      <div className="w-full pb-20 pt-32 xl:px-40 xl:py-52">
+      <div className="w-full pb-20 xl:px-40 xl:py-20">
         <div className="min-w-sm mx-auto border-b md:mb-10 xl:max-w-screen-lg">
           <h1 className="mb-4 flex text-4xl font-bold text-black xl:text-5xl/[1.3]">
             {' '}

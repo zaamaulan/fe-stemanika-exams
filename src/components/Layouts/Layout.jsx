@@ -8,7 +8,7 @@ const Layout = () => {
             <header>
                 <NavBar />
             </header>
-            <div className=" ">
+            <div className="mt-28">
                 <Outlet />
             </div>
         </React.Fragment>
