@@ -22,8 +22,6 @@ export const UjianProvider = ({ children }) => {
 
     fetchData()
   }, [])
-  console.log(ujianData);
-
 
   return <UjianContext.Provider value={{ ujianData }}>{children}</UjianContext.Provider>
 }
@@ -35,4 +33,3 @@ export const useUjianContext = () => {
 UjianProvider.propTypes = {
   children: PropTypes.node,
 }
-

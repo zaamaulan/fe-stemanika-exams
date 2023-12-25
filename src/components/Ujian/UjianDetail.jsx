@@ -27,7 +27,7 @@ const UjianDetail = () => {
                     {ujian.attributes.nama_ujian}
                   </h1>
 
-                  <p className="mb-6 max-w-screen-md text-sm text-gray-500 xl:text-base">
+                  <p className="mb-6 max-w-screen-md text-sm text-gray-600 xl:text-base">
                     {ujian.attributes.deskripsi}
                   </p>
                 </div>
@@ -54,7 +54,7 @@ const UjianDetail = () => {
                 <motion.h1
                   initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.6, duration: 1, ease: 'easeOut' }}
+                  transition={{ delay: 0.4, duration: 1, ease: 'easeOut' }}
                   className="mb-4 flex text-2xl font-bold text-black xl:text-3xl border-b pb-4"
                 >
                   Peraturan dan Panduan Mengerjakan Ujian
@@ -62,7 +62,7 @@ const UjianDetail = () => {
                 <motion.div
                   initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
+                  transition={{ delay: 0.8, duration: 1, ease: 'easeOut' }}
                 >
                   <div className='text-sm xl:text-base space-y-2  text-gray-600'>
                     <p>1. Peserta ujian harus masuk ke ruang ujian sesuai dengan jadwal yang ditentukan.</p>
@@ -81,10 +81,7 @@ const UjianDetail = () => {
           </div>
         </section>
       ) : (
-        <div className="-mt-28 flex h-screen flex-col items-center justify-center">
-          <p className="mb-4 flex text-4xl font-bold text-black xl:text-6xl">404</p>
-          <p className="mb-4 flex text-4xl font-medium capitalize text-black xl:text-xl">Ujian tidak ditemukan</p>
-        </div>
+        <div>Loading...</div>
       )}
     </>
   )

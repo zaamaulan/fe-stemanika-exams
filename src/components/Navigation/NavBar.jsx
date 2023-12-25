@@ -29,9 +29,9 @@ const NavBar = () => {
       document.removeEventListener('click', closeNavbarOnOutsideClick)
     }
   }, [showNavLinks])
-  
+
   return (
-    <nav className="fixed top-0 z-50 w-full bg-white bg-opacity-50 backdrop-blur-lg backdrop-filter xl:px-40 xl:py-6">
+    <nav className="fixed top-0 z-50 w-full bg-white bg-opacity-50 backdrop-blur-lg backdrop-filter xl:px-40 xl:py-6 select-none">
       <div className="hidden xl:flex xl:items-center xl:justify-between xl:gap-x-10">
         <div className="text-xl font-semibold tracking-wide">Stemanika Exam</div>
         <div className="xl:mr-20 xl:flex xl:items-center xl:gap-x-10">
@@ -89,24 +89,36 @@ const NavBar = () => {
               showNavLinks ? '-translate-x-8' : '-translate-x-[110vw]'
             }`}
           >
-            <Link to="/" onClick={() => handleLinkClick('/')} className="tracking-wide">
-              Beranda
-            </Link>
-            <Link to={'/exam'} onClick={() => handleLinkClick('/ujian')} className="tracking-wide">
-              Ujian
-            </Link>
-            <Link to={'/guide'} onClick={() => handleLinkClick('/guide')} className="tracking-wide">
-              Panduan Ujian
-            </Link>
-            <Link to={'/annoucement'} onClick={() => handleLinkClick('/annoucement')} className="tracking-wide">
-              Pengumuman
-            </Link>
-            <Link to={'/result'} onClick={() => handleLinkClick('/result')} className="tracking-wide">
-              Hasil
-            </Link>
-            <Link to={'/about'} onClick={() => handleLinkClick('/about')} className="tracking-wide">
-              Tentang Kami
-            </Link>
+            <span>
+              <Link to="/" onClick={() => handleLinkClick('/')} className="tracking-wide">
+                Beranda
+              </Link>
+            </span>
+            <span>
+              <Link to={'/exam'} onClick={() => handleLinkClick('/ujian')} className="tracking-wide">
+                Ujian
+              </Link>
+            </span>
+            <span>
+              <Link to={'/guide'} onClick={() => handleLinkClick('/guide')} className="tracking-wide">
+                Panduan Ujian
+              </Link>
+            </span>
+            <span>
+              <Link to={'/annoucement'} onClick={() => handleLinkClick('/annoucement')} className="tracking-wide">
+                Pengumuman
+              </Link>
+            </span>
+            <span>
+              <Link to={'/result'} onClick={() => handleLinkClick('/result')} className="tracking-wide">
+                Hasil
+              </Link>
+            </span>
+            <span>
+              <Link to={'/about'} onClick={() => handleLinkClick('/about')} className="tracking-wide">
+                Tentang Kami
+              </Link>
+            </span>
           </div>
         </motion.div>
         <motion.div
