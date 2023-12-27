@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import { format, addSeconds } from 'date-fns' // Import format and addSeconds functions
+import { addSeconds, differenceInSeconds, format } from 'date-fns'; // Import format and addSeconds functions
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useUjianContext } from '../../context/ujianContext'
 import Card from '../Card/Card'
-import ButtonPrimary from '../UI/Button'
+import Button from '../UI/Button'
 
 const UjianForm = () => {
   const navigate = useNavigate()
@@ -11,8 +11,15 @@ const UjianForm = () => {
   const [examData, setExamData] = useState({})
   const [answers, setAnswers] = useState([])
   const [score, setScore] = useState(0)
-  const [countdown, setCountdown] = useState(0)
   const { ujianData } = useUjianContext()
+
+  const [startTime, setStartTime] = useState(new Date())
+  const [endTime, setEndTime] = useState(null)
+  const [remainingTime, setRemainingTime] = useState(0)
+  const [formattedRemainingTime, setFormattedRemainingTime] = useState('00:00')
+  const [storedExamDuration, setStoredExamDuration] = useState(0)
+  const [currentTime, setCurrentTime] = useState(format(new Date(), 'HH:mm:ss'))
+  const [timeDifference, setTimeDifference] = useState(0)
 
   useEffect(() => {
     const existingExamData = ujianData.find((ujian) => ujian.id === parseInt(examId))
@@ -23,27 +30,72 @@ const UjianForm = () => {
 
       setAnswers(examQuestions.length > 0 ? Array(examQuestions.length).fill(null) : [])
       setExamData(existingExamData)
-
-      const durationInMinutes = examAttributes.duration || 60
-      setCountdown(durationInMinutes * 60)
     }
   }, [examId, ujianData])
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCountdown((prevCountdown) => {
-        if (prevCountdown === 1) {
-          clearInterval(timer)
-          console.log('Waktu Habis')
-        }
-        return prevCountdown - 1
-      })
+    const storedStartTime = localStorage.getItem('startTime')
+    const storedRemainingTime = localStorage.getItem('remainingTime')
+    const storedExamDuration = localStorage.getItem('examDuration')
+    const storedEndTime = localStorage.getItem('endTime')
+
+    const date1 = new Date(`2000-01-01T${currentTime}Z`)
+    const date2 = new Date(`2000-01-01T${storedEndTime}Z`)
+
+    if (storedEndTime) {
+      if (date2 < date1) {
+        date2.setDate(date2.getDate() + 1)
+      }
+
+      const diff = date2 - date1
+
+      const formattedRemainingTime = format(diff, 'mm:ss')
+      setFormattedRemainingTime(formattedRemainingTime)
+    }
+
+    if (storedStartTime && storedRemainingTime && storedExamDuration) {
+      const elapsedSeconds = differenceInSeconds(new Date(), new Date(storedStartTime))
+      const remainingSeconds = Math.max(0, parseInt(storedRemainingTime, 10) - elapsedSeconds)
+
+      setStartTime(new Date(storedStartTime))
+      setRemainingTime(remainingSeconds)
+      setStoredExamDuration(parseInt(storedExamDuration, 10))
+
+      // Restore the end time if available
+    } else {
+      const now = new Date()
+
+      // Check if startTime is not in localStorage before setting it
+      if (!storedStartTime) {
+        setStartTime(now)
+        localStorage.setItem('startTime', format(now, 'HH:mm:ss'))
+      }
+
+      const examDuration = 3600
+      const endTime = addSeconds(now, examDuration)
+      setRemainingTime(examDuration)
+      setStoredExamDuration(examDuration)
+
+      // Check if endTime is not in localStorage before setting it
+      if (!storedEndTime) {
+        localStorage.setItem('endTime', format(endTime, 'HH:mm:ss'))
+        setEndTime(endTime)
+      }
+    }
+
+    const intervalId = setInterval(() => {
+      // Perbarui waktu saat ini
+      setCurrentTime(format(new Date(), 'HH:mm:ss'))
+
+      // Perbarui selisih waktu dengan membandingkan endTime dengan waktu sekarang
+      if (endTime) {
+        const diff = differenceInSeconds(endTime, new Date())
+        setTimeDifference(diff)
+      }
     }, 1000)
 
-    return () => clearInterval(timer)
-  }, [countdown, navigate])
-
-  const formattedCountdown = format(addSeconds(new Date(0), countdown), 'mm:ss')
+    return () => clearInterval(intervalId)
+  }, [currentTime, formattedRemainingTime, endTime, formattedRemainingTime])
 
   const handleChange = (index, selectedOption) => {
     const newAnswers = [...answers]
@@ -55,15 +107,20 @@ const UjianForm = () => {
     if (answers.some((answer) => answer === null)) {
       console.log('Harus menjawab semua pertanyaan!')
       return
+    } else {
+      const newScore = answers.reduce(
+        (acc, answer, index) => (answer === examData.attributes.soal[index].jawaban_benar ? acc + 4 : acc),
+        0,
+      )
+
+      setScore(newScore)
+      console.log('Skor akhir:', newScore)
+
+      navigate('/result')
+
+      localStorage.removeItem('startTime')
+      localStorage.removeItem('endTime')
     }
-
-    const newScore = answers.reduce(
-      (acc, answer, index) => (answer === examData.attributes.soal[index].jawaban_benar ? acc + 4 : acc),
-      0,
-    )
-
-    setScore(newScore)
-    console.log('Skor akhir:', newScore)
   }
 
   const { attributes } = examData
@@ -74,8 +131,8 @@ const UjianForm = () => {
         <>
           <h1 className="mb-2 flex text-4xl font-bold text-black xl:text-5xl/[1.3]">{attributes.nama_ujian}</h1>
           <p className="mb-6 max-w-screen-md text-sm text-gray-600 xl:text-base">{attributes.deskripsi}</p>
-          <p className="sticky top-16 mb-2 flex bg-white  py-4 text-sm   text-black xl:top-20 xl:text-xl">
-            Waktu Tersisa: {formattedCountdown}
+          <p className="sticky top-16 mb-2 flex bg-white  py-4 text-sm font-medium  text-black xl:top-20 xl:text-xl">
+            Waktu tersisa: {formattedRemainingTime}
           </p>
           <div className="grid grid-cols-1 gap-6">
             {attributes.soal && attributes.soal.length > 0 ? (
@@ -93,7 +150,7 @@ const UjianForm = () => {
                           >
                             <div
                               className={`flex h-4 w-4 items-center justify-center   md:h-5 md:w-5 ${
-                                answers[index] === option ? ' text-white' : 'border-gray-400 rounded-full border'
+                                answers[index] === option ? ' text-white' : 'rounded-full border border-gray-400'
                               }`}
                             >
                               {answers[index] === option && (
@@ -120,8 +177,8 @@ const UjianForm = () => {
             )}{' '}
           </div>
 
-          <div onClick={handleSubmit} className='mt-6'>
-            <ButtonPrimary>Submit</ButtonPrimary>
+          <div onClick={handleSubmit} className="my-6">
+            <Button>Submit</Button>
           </div>
         </>
       )}

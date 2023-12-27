@@ -120,7 +120,7 @@ const UjianList = () => {
                         Durasi Pengerjaan: {ujian.attributes.durasi_ujian} menit
                       </p>
                     </div> */}
-                    {/* <ButtonPrimary>Detail</ButtonPrimary> */}
+                    {/* <Button>Detail</Button> */}
                     <Link to={`/exam/${ujian.id}`} className="text-sm underline">
                       Lihat Detail
                     </Link>

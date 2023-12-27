@@ -1,5 +1,5 @@
 import Card from '../components/Card/Card'
-import ButtonPrimary from '../components/UI/Button'
+import Button from '../components/UI/Button'
 
 const About = () => {
   return (
@@ -65,7 +65,7 @@ const About = () => {
             <strong>info@stemanikaexam.com</strong>.
           </p>
           <div className="md justify-center">
-            <ButtonPrimary>Pelajari Selanjutnya</ButtonPrimary>
+            <Button>Pelajari Selanjutnya</Button>
           </div>
         </div>
       </div>

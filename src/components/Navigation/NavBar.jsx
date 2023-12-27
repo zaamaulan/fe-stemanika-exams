@@ -31,7 +31,7 @@ const NavBar = () => {
   }, [showNavLinks])
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-white bg-opacity-50 backdrop-blur-lg backdrop-filter xl:px-40 xl:py-6 select-none">
+    <nav className="fixed top-0 z-50 w-full select-none bg-white bg-opacity-50 backdrop-blur-lg backdrop-filter xl:px-40 xl:py-6">
       <div className="hidden xl:flex xl:items-center xl:justify-between xl:gap-x-10">
         <div className="text-xl font-semibold tracking-wide">Stemanika Exam</div>
         <div className="xl:mr-20 xl:flex xl:items-center xl:gap-x-10">

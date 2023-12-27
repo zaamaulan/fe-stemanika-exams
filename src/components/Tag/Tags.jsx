@@ -1,24 +1,24 @@
 import PropTypes from 'prop-types';
 
-const Tag = ({ text, className }) => (
-  <span className={`inline-block rounded-lg ${className || 'bg-black text-white'} px-3 py-1 text-xs font-medium `}>
+const Tag = ({ text, colorClass }) => (
+  <span className={`inline-block rounded-lg ${colorClass} px-3 py-1 text-xs font-medium`}>
     {text}
   </span>
 );
 
 Tag.propTypes = {
   text: PropTypes.string.isRequired,
-  className: PropTypes.string,
+  colorClass: PropTypes.string.isRequired,
 };
 
-export const UpcomingTags = () => <Tag text="Upcoming" />;
-export const OngoingTags = () => <Tag text="Ongoing" />;
-export const CompletedTags = () => <Tag text="Completed" />;
-export const LastMinutePreparationTags = () => <Tag text="Last-Minute Preparation" />;
-export const PostExamReflectionPreTags = () => <Tag text="Post-Exam Reflection" />;
-export const SectionTags = ({ children, className }) => <Tag text={children} className={className} />;
+export const UpcomingTags = () => <Tag text="Upcoming" colorClass="bg-blue-500 text-white" />;
+export const OngoingTags = () => <Tag text="Ongoing" colorClass="bg-green-500 text-white" />;
+export const CompletedTags = () => <Tag text="Completed" colorClass="bg-gray-500 text-white" />;
+export const LastMinutePreparationTags = () => <Tag text="Last-Minute Preparation" colorClass="bg-yellow-500 text-black" />;
+export const PostExamReflectionPreTags = () => <Tag text="Post-Exam Reflection" colorClass="bg-purple-500 text-white" />;
+export const SectionTags = ({ children, colorClass }) => <Tag text={children} colorClass={colorClass} />;
 
 SectionTags.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string,
+  colorClass: PropTypes.string.isRequired,
 };

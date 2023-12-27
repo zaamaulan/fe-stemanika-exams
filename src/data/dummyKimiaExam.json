@@ -1,0 +1,247 @@
+[
+  {
+    "id": 39,
+    "attributes": {
+      "nama_ujian": "Ujian Bahasa Inggris",
+      "deskripsi": "Ujian ini menguji kemampuan Bahasa Inggris siswa pada berbagai aspek, termasuk pemahaman bacaan, tata bahasa, dan kosa kata.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2024-01-01T02:30:00.000Z",
+      "pengawas": "Novi",
+      "createdAt": "2023-12-18T05:18:28.108Z",
+      "updatedAt": "2023-12-18T05:18:59.729Z",
+      "hasil_ujian": {
+        "data": null
+      },
+      "ruang_ujian": {
+        "data": {
+          "id": 3,
+          "attributes": {
+            "createdAt": "2023-12-18T05:00:16.493Z",
+            "updatedAt": "2023-12-18T05:00:16.493Z",
+            "ruangan": "2"
+          }
+        }
+      },
+      "soal_ujians": {
+        "data": []
+      },
+      "soal": [
+        {
+          "id": 89,
+          "teks_pertanyaan": "Choose the correct word to complete the sentence: She ________ to the store every day.",
+          "pilihan_jawaban": ["go", "goes", "going", "gone", "been"],
+          "jawaban_benar": "goes",
+          "poin_nilai": 4
+        },
+        {
+          "id": 90,
+          "teks_pertanyaan": "What is the synonym of 'happy'?",
+          "pilihan_jawaban": ["sad", "angry", "joyful", "tired", "lonely"],
+          "jawaban_benar": "joyful",
+          "poin_nilai": 4
+        },
+        {
+          "id": 91,
+          "teks_pertanyaan": "Which sentence is grammatically correct?",
+          "pilihan_jawaban": [
+            "I am not agree with your decision.",
+            "I am not agreed with your decision.",
+            "I am not agreeing with your decision.",
+            "I do not agree with your decision.",
+            "I do not agreed with your decision."
+          ],
+          "jawaban_benar": "I do not agree with your decision.",
+          "poin_nilai": 4
+        },
+        {
+          "id": 92,
+          "teks_pertanyaan": "What is the correct form of the verb in parentheses? The students always (study) ________ hard for their exams.",
+          "pilihan_jawaban": ["study", "studies", "studying", "studied", "will study"],
+          "jawaban_benar": "study",
+          "poin_nilai": 4
+        },
+        {
+          "id": 93,
+          "teks_pertanyaan": "Choose the correct preposition: The cat is sitting ________ the table.",
+          "pilihan_jawaban": ["in", "on", "at", "by", "with"],
+          "jawaban_benar": "on",
+          "poin_nilai": 4
+        },
+        {
+          "id": 94,
+          "teks_pertanyaan": "What is the opposite of 'beautiful'?",
+          "pilihan_jawaban": ["ugly", "pretty", "lovely", "attractive", "gorgeous"],
+          "jawaban_benar": "ugly",
+          "poin_nilai": 4
+        },
+        {
+          "id": 95,
+          "teks_pertanyaan": "Complete the sentence: If it rains, we ________ to the cinema.",
+          "pilihan_jawaban": ["will go", "going", "go", "gone", "goes"],
+          "jawaban_benar": "will go",
+          "poin_nilai": 4
+        },
+        {
+          "id": 96,
+          "teks_pertanyaan": "Choose the correct form of the verb in parentheses: She ________ a book when I saw her.",
+          "pilihan_jawaban": ["read", "reads", "reading", "have read", "will read"],
+          "jawaban_benar": "was reading",
+          "poin_nilai": 4
+        },
+        {
+          "id": 97,
+          "teks_pertanyaan": "What is the correct plural form of 'child'?",
+          "pilihan_jawaban": ["childs", "childrens", "childs'", "children", "childes"],
+          "jawaban_benar": "children",
+          "poin_nilai": 4
+        },
+        {
+          "id": 98,
+          "teks_pertanyaan": "Which sentence is grammatically correct?",
+          "pilihan_jawaban": [
+            "He don't like coffee.",
+            "He doesn't likes coffee.",
+            "He doesn't like coffee.",
+            "He not likes coffee.",
+            "He not like coffee."
+          ],
+          "jawaban_benar": "He doesn't like coffee.",
+          "poin_nilai": 4
+        },
+        {
+          "id": 99,
+          "teks_pertanyaan": "Choose the correct word to complete the sentence: I have lived in this city ________ 2010.",
+          "pilihan_jawaban": ["since", "for", "in", "at", "on"],
+          "jawaban_benar": "since",
+          "poin_nilai": 4
+        },
+        {
+          "id": 100,
+          "teks_pertanyaan": "What is the correct order of the words to form a question? (you / go / did / yesterday / where)?",
+          "pilihan_jawaban": [
+            "Did you go where yesterday?",
+            "You go did where yesterday?",
+            "Where did you go yesterday?",
+            "Yesterday did you go where?",
+            "Yesterday where go you did?"
+          ],
+          "jawaban_benar": "Where did you go yesterday?",
+          "poin_nilai": 4
+        },
+        {
+          "id": 101,
+          "teks_pertanyaan": "What is the correct past tense of 'eat'?",
+          "pilihan_jawaban": ["eat", "ate", "eaten", "eating", "eats"],
+          "jawaban_benar": "ate",
+          "poin_nilai": 4
+        },
+        {
+          "id": 102,
+          "teks_pertanyaan": "Choose the correct modal verb to complete the sentence: You ________ finish your homework before watching TV.",
+          "pilihan_jawaban": ["can", "could", "may", "might", "should"],
+          "jawaban_benar": "should",
+          "poin_nilai": 4
+        },
+        {
+          "id": 103,
+          "teks_pertanyaan": "What is the correct form of the verb in parentheses? They ________ to the beach last weekend.",
+          "pilihan_jawaban": ["go", "going", "gone", "went", "will go"],
+          "jawaban_benar": "went",
+          "poin_nilai": 4
+        },
+        {
+          "id": 104,
+          "teks_pertanyaan": "What is the synonym of 'brave'?",
+          "pilihan_jawaban": ["fearful", "cowardly", "bold", "shy", "timid"],
+          "jawaban_benar": "bold",
+          "poin_nilai": 4
+        },
+        {
+          "id": 105,
+          "teks_pertanyaan": "Which sentence is grammatically correct?",
+          "pilihan_jawaban": [
+            "She don't has a car.",
+            "She hasn't a car.",
+            "She not have a car.",
+            "She not has a car.",
+            "She doesn't have a car."
+          ],
+          "jawaban_benar": "She doesn't have a car.",
+          "poin_nilai": 4
+        },
+        {
+          "id": 106,
+          "teks_pertanyaan": "What is the correct form of the verb in parentheses? My friends and I ________ a movie last night.",
+          "pilihan_jawaban": ["watch", "watches", "watching", "have watched", "will watch"],
+          "jawaban_benar": "watched",
+          "poin_nilai": 4
+        },
+        {
+          "id": 107,
+          "teks_pertanyaan": "Choose the correct word to complete the sentence: The cat is ________ the roof.",
+          "pilihan_jawaban": ["on", "in", "at", "by", "with"],
+          "jawaban_benar": "on",
+          "poin_nilai": 4
+        },
+        {
+          "id": 108,
+          "teks_pertanyaan": "What is the opposite of 'happy'?",
+          "pilihan_jawaban": ["sad", "angry", "joyful", "tired", "lonely"],
+          "jawaban_benar": "sad",
+          "poin_nilai": 4
+        },
+        {
+          "id": 109,
+          "teks_pertanyaan": "Complete the sentence: If I ________ you, I would apologize.",
+          "pilihan_jawaban": ["am", "is", "are", "were", "will be"],
+          "jawaban_benar": "were",
+          "poin_nilai": 4
+        },
+        {
+          "id": 110,
+          "teks_pertanyaan": "What is the correct form of the verb in parentheses? She ________ to the music when the phone rang.",
+          "pilihan_jawaban": ["listens", "listening", "listened", "will listen", "listen"],
+          "jawaban_benar": "was listening",
+          "poin_nilai": 4
+        },
+        {
+          "id": 111,
+          "teks_pertanyaan": "Choose the correct preposition: The book is ________ the shelf.",
+          "pilihan_jawaban": ["in", "on", "at", "by", "with"],
+          "jawaban_benar": "on",
+          "poin_nilai": 4
+        },
+        {
+          "id": 112,
+          "teks_pertanyaan": "What is the correct order of the words to form a question? (what / you / do / last night)?",
+          "pilihan_jawaban": [
+            "You what do last night?",
+            "What do you last night?",
+            "Do you what last night?",
+            "Last night do you what?",
+            "Do what you last night?"
+          ],
+          "jawaban_benar": "What did you do last night?",
+          "poin_nilai": 4
+        },
+        {
+          "id": 113,
+          "teks_pertanyaan": "What is the correct past participle of 'drink'?",
+          "pilihan_jawaban": ["drink", "drank", "drunk", "drinking", "drinks"],
+          "jawaban_benar": "drunk",
+          "poin_nilai": 4
+        },
+        {
+          "id": 114,
+          "teks_pertanyaan": "Choose the correct modal verb to complete the sentence: You ________ come to the party if you don't want to.",
+          "pilihan_jawaban": ["can't", "must", "may", "should", "shall"],
+          "jawaban_benar": "shouldn't",
+          "poin_nilai": 4
+        }
+      ],
+      "media": {
+        "data": null
+      }
+    }
+  }
+]

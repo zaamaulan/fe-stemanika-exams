@@ -11,7 +11,7 @@ import {
   PostExamReflectionPreTags,
   UpcomingTags,
 } from '../components/Tag/Tags'
-import ButtonPrimary from '../components/UI/Button'
+import Button from '../components/UI/Button'
 import { useUjianContext } from '../context/ujianContext'
 
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
             efisien dan praktis.
           </p>
           <Link to="/exam">
-            <ButtonPrimary>Lihat Ujian</ButtonPrimary>
+            <Button>Lihat Ujian</Button>
           </Link>
         </div>
       </div>
@@ -179,9 +179,19 @@ const App = () => {
               })}
             </div>
           </div>
-          <Link to={'/exam'}>
-            <ButtonPrimary> Lihat Semua Ujian</ButtonPrimary>
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.4,
+            }}
+            viewport={{ once: true }}
+          >
+            <Link to={'/exam'}>
+              <Button> Lihat Semua Ujian</Button>
+            </Link>
+          </motion.div>
         </section>
       ) : (
         <>
@@ -285,7 +295,7 @@ const App = () => {
               </div>
             </div>
             <Link to={'/ujian'}>
-              <ButtonPrimary> Lihat Semua Ujian</ButtonPrimary>
+              <Button> Lihat Semua Ujian</Button>
             </Link>
           </section>
         </>
@@ -314,7 +324,7 @@ const App = () => {
                       Persiapan Sebelum Ujian
                     </h1>
                     <div>
-                      <p className="mb-2 mt-4 text-lg font-medium text-black xl:text-xl"> Perangkat yang diperlukan:</p>
+                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl"> Perangkat yang diperlukan:</p>
                       <p className="mb-5 text-sm text-gray-500 xl:mb-5 xl:text-base">
                         Pastikan Anda menggunakan perangkat dengan koneksi internet stabil. Gunakan peramban web terbaru
                         seperti <strong>Google Chrome</strong>, <strong>Mozilla Firefox</strong>, atau{' '}
@@ -322,14 +332,14 @@ const App = () => {
                       </p>
                     </div>
                     <div>
-                      <p className="mb-2 mt-4 text-lg font-medium text-black xl:text-xl">Ruangan yang Dipakai:</p>
+                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl">Ruangan yang Dipakai:</p>
                       <p className="mb-5 text-sm text-gray-500 xl:mb-5 xl:text-base">
                         Pelajari informasi tentang ruangan yang akan digunakan sesuai dengan ketentuan yang diberikan
                         oleh guru. Pastikan untuk mengetahui detail terkait kenyamanan ruangan dan pencahayaan.
                       </p>
                     </div>
                     <div>
-                      <p className="mb-2 mt-4 text-lg font-medium text-black xl:text-xl">Koneksi Internet:</p>
+                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl">Koneksi Internet:</p>
                       <p className=" text-sm text-gray-500 xl:text-base">
                         Pastikan memiliki akses ke koneksi internet yang stabil untuk menjalani ujian dengan lancar.
                       </p>
@@ -354,13 +364,13 @@ const App = () => {
                       Setelah Ujian
                     </h1>
                     <div>
-                      <p className="mb-2 mt-4 text-lg font-medium text-black xl:text-xl"> Verifikasi Hasil:</p>
+                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl"> Verifikasi Hasil:</p>
                       <p className="mb-5 text-sm text-gray-500 xl:mb-5 xl:text-base">
                         Setelah submit, verifikasi hasil ujian dan pastikan sesuai dengan jawaban yang telah diberikan.
                       </p>
                     </div>
                     <div>
-                      <p className="mb-2 mt-4 text-lg font-medium text-black xl:text-xl">Logout:</p>
+                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl">Logout:</p>
                       <p className=" text-sm text-gray-500  xl:text-base">
                         Keluar dari akun setelah menyelesaikan ujian dan tutup peramban untuk keamanan akun.
                       </p>
@@ -386,33 +396,33 @@ const App = () => {
                       Menjalani Ujian
                     </h1>
                     <div>
-                      <p className="mb-2 mt-4 text-lg font-medium text-black xl:text-xl"> Dashboard Ujian:</p>
+                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl"> Dashboard Ujian:</p>
                       <p className="mb-5 text-sm text-gray-500 xl:mb-5 xl:text-base">
                         Setelah login, akses dashboard ujian dan pilih ujian yang akan diikuti.
                       </p>
                     </div>
                     <div>
-                      <p className="mb-2 mt-4 text-lg font-medium text-black xl:text-xl">Petunjuk Ujian:</p>
+                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl">Petunjuk Ujian:</p>
                       <p className="mb-5 text-sm text-gray-500 xl:mb-5 xl:text-base">
                         Baca dengan teliti petunjuk ujian sebelum memulai untuk memahami aturan dan tata cara ujian.
                       </p>
                     </div>
                     <div>
-                      <p className="mb-2 mt-4 text-lg font-medium text-black xl:text-xl">Waktu Ujian:</p>
+                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl">Waktu Ujian:</p>
                       <p className="mb-5 text-sm text-gray-500 xl:mb-5 xl:text-base">
                         Perhatikan waktu yang tersedia untuk setiap bagian ujian dan berikan peringatan saat waktu
                         hampir habis.
                       </p>
                     </div>
                     <div>
-                      <p className="mb-2 mt-4 text-lg font-medium text-black xl:text-xl">Navigasi Soal:</p>
+                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl">Navigasi Soal:</p>
                       <p className="mb-5 text-sm text-gray-500 xl:mb-5 xl:text-base">
                         Gunakan navigasi untuk beralih antara soal dan perhatikan pertanyaan yang telah dikerjakan atau
                         belum.
                       </p>
                     </div>
                     <div>
-                      <p className="mb-2 mt-4 text-lg font-medium text-black xl:text-xl">Submit Jawaban:</p>
+                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl">Submit Jawaban:</p>
                       <p className=" text-sm text-gray-500 xl:text-base">
                         Simpan jawaban secara berkala dan setelah menyelesaikan semua soal, klik &quot;Submit&quot;
                         untuk mengirim jawaban.
