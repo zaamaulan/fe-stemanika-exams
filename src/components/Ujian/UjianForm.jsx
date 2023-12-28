@@ -14,7 +14,7 @@ const UjianForm = () => {
   const [answers, setAnswers] = useState([])
   const [score, setScore] = useState(0)
   const { ujianData } = useUjianContext()
-  // const { updateScore } = useResultContext();
+  const { updateScore } = useResultContext();
 
   const [startTime, setStartTime] = useState(new Date())
   const [endTime, setEndTime] = useState(null)
@@ -130,15 +130,28 @@ const UjianForm = () => {
       setIsFilled(true)
       return
     } else {
-      const newScore = answers.reduce(
-        (acc, answer, index) => (answer === examData.attributes.soal[index].jawaban_benar ? acc + 4 : acc),
-        0,
+      const { soal } = examData.attributes
+
+      const result = answers.reduce(
+        (acc, answer, index) => {
+          const isCorrect = answer === soal[index].jawaban_benar
+          return {
+            correctCount: isCorrect ? acc.correctCount + 1 : acc.correctCount,
+            wrongCount: isCorrect ? acc.wrongCount : acc.wrongCount + 1,
+          }
+        },
+        { correctCount: 0, wrongCount: 0 },
       )
+
+      const newScore = result.correctCount * 4
 
       // updateScore(newScore);
 
       setScore(newScore)
+      updateScore(newScore)
       console.log('Skor akhir:', newScore)
+      console.log('Soal yang benar:', result.correctCount)
+      console.log('Soal yang salah:', result.wrongCount)
 
       navigate('/result')
 

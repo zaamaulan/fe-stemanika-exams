@@ -12,9 +12,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <HelmetProvider>
       <AuthProvider>
         <UjianProvider>
-          {/* <ResultProvider> */}
+          <ResultProvider>
             <App />
-          {/* </ResultProvider> */}
+          </ResultProvider>
         </UjianProvider>
       </AuthProvider>{' '}
     </HelmetProvider>
