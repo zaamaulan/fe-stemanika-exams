@@ -32,7 +32,7 @@ const UjianDetail = () => {
         Ujian Belum Tersedia
       </Button>
     )
-  } 
+  }
   // completed
   else if (
     (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) < 3) ||
@@ -83,7 +83,10 @@ const UjianDetail = () => {
                   </p>
                 </div>
 
-                {status}
+                {/* {status} */}
+                <Link to={`/exam/${examId}/form`}>
+                  <Button className={' bg-black text-white '}>Mulai Kerjakan</Button>
+                </Link>
               </div>
               <motion.div className="pt-20 xl:pt-0">
                 <motion.h1

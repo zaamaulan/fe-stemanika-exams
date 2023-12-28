@@ -197,6 +197,9 @@
       ],
       "media": {
         "data": null
+      },
+      "users": {
+        "data": []
       }
     }
   },
@@ -442,6 +445,9 @@
       ],
       "media": {
         "data": null
+      },
+      "users": {
+        "data": []
       }
     }
   },
@@ -641,6 +647,9 @@
       ],
       "media": {
         "data": null
+      },
+      "users": {
+        "data": []
       }
     }
   },
@@ -649,7 +658,7 @@
     "attributes": {
       "nama_ujian": "Ujian Teori Pemrograman Web",
       "deskripsi": "Ujian ini mengevaluasi pengetahuan siswa tentang konsep-konsep dasar dan teori pemrograman web.",
-      "durasi_ujian": 3600,
+      "durasi_ujian": 360000,
       "waktu_mulai": "2023-12-27T18:00:00.000Z",
       "pengawas": "Ibu/Bu Pengawas",
       "createdAt": "2023-12-18T06:41:44.264Z",
@@ -1006,6 +1015,488 @@
             "updatedAt": "2023-12-18T07:39:52.201Z"
           }
         }
+      }
+    }
+  },
+  {
+    "id": 44,
+    "attributes": {
+      "nama_ujian": "Ujian Fisika",
+      "deskripsi": "Ujian mata pelajaran Fisika",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2023-12-28T15:00:00.000Z",
+      "pengawas": "Nama Guru Fisika",
+      "createdAt": "2023-12-28T04:22:41.755Z",
+      "updatedAt": "2023-12-28T04:23:06.601Z",
+      "hasil_ujian": {
+        "data": null
+      },
+      "ruang_ujian": {
+        "data": null
+      },
+      "soal_ujians": {
+        "data": []
+      },
+      "soal": [
+        {
+          "id": 186,
+          "teks_pertanyaan": "Apakah rumus kecepatan?",
+          "pilihan_jawaban": ["s = vt", "F = ma", "E = mc^2", "P = IV", "a = Δv/Δt"],
+          "jawaban_benar": "s = vt",
+          "poin_nilai": 4
+        },
+        {
+          "id": 187,
+          "teks_pertanyaan": "Apa yang menyebabkan terjadinya gaya gravitasi?",
+          "pilihan_jawaban": ["Elektromagnetisme", "Gaya nuklir", "Gaya lepas", "Massa benda", "Percepatan gravitasi"],
+          "jawaban_benar": "Massa benda",
+          "poin_nilai": 4
+        },
+        {
+          "id": 188,
+          "teks_pertanyaan": "Apa hukum kedua termodinamika?",
+          "pilihan_jawaban": [
+            "Hukum Boyle",
+            "Hukum Avogadro",
+            "Hukum Gay-Lussac",
+            "Hukum Carnot",
+            "Hukum termodinamika kedua"
+          ],
+          "jawaban_benar": "Hukum termodinamika kedua",
+          "poin_nilai": 4
+        },
+        {
+          "id": 189,
+          "teks_pertanyaan": "Apa rumus energi kinetik?",
+          "pilihan_jawaban": ["E = mc^2", "E = 1/2mv^2", "E = mgh", "E = Pt", "E = Q/V"],
+          "jawaban_benar": "E = 1/2mv^2",
+          "poin_nilai": 4
+        },
+        {
+          "id": 190,
+          "teks_pertanyaan": "Berapa nilai percepatan gravitasi di permukaan Bumi?",
+          "pilihan_jawaban": ["9.8 m/s^2", "10 m/s^2", "8 m/s^2", "12 m/s^2", "7 m/s^2"],
+          "jawaban_benar": "9.8 m/s^2",
+          "poin_nilai": 4
+        },
+        {
+          "id": 191,
+          "teks_pertanyaan": "Apa rumus gaya gravitasi?",
+          "pilihan_jawaban": ["F = ma", "F = G(m1m2)/r^2", "F = kx", "F = P/A", "F = ρVg"],
+          "jawaban_benar": "F = G(m1m2)/r^2",
+          "poin_nilai": 4
+        },
+        {
+          "id": 192,
+          "teks_pertanyaan": "Apa yang dimaksud dengan hukum Hooke?",
+          "pilihan_jawaban": [
+            "Gaya gravitasi antara dua benda",
+            "Perubahan panjang elastis sebanding dengan gaya yang diberikan",
+            "Hukum kekekalan energi",
+            "Gaya yang disebabkan oleh pemuaian",
+            "Hukum Coulomb"
+          ],
+          "jawaban_benar": "Perubahan panjang elastis sebanding dengan gaya yang diberikan",
+          "poin_nilai": 4
+        },
+        {
+          "id": 193,
+          "teks_pertanyaan": "Apa rumus energi potensial gravitasi?",
+          "pilihan_jawaban": ["E = mc^2", "E = 1/2mv^2", "E = mgh", "E = Pt", "E = Q/V"],
+          "jawaban_benar": "E = mgh",
+          "poin_nilai": 4
+        },
+        {
+          "id": 194,
+          "teks_pertanyaan": "Apa yang dimaksud dengan momentum?",
+          "pilihan_jawaban": [
+            "Gaya yang diberikan oleh suatu benda",
+            "Produk dari massa dan percepatan",
+            "Massa jenis benda",
+            "Jumlah gerakan suatu benda",
+            "Perubahan posisi suatu benda"
+          ],
+          "jawaban_benar": "Produk dari massa dan percepatan",
+          "poin_nilai": 4
+        },
+        {
+          "id": 195,
+          "teks_pertanyaan": "Apa rumus hukum kekekalan momentum?",
+          "pilihan_jawaban": ["m1v1 = m2v2", "F = ma", "E = mc^2", "p = mv", "P = IV"],
+          "jawaban_benar": "p = mv",
+          "poin_nilai": 4
+        },
+        {
+          "id": 196,
+          "teks_pertanyaan": "Apa rumus gaya resultan?",
+          "pilihan_jawaban": ["F = ma", "F = G(m1m2)/r^2", "F = kx", "F = P/A", "F = ρVg"],
+          "jawaban_benar": "F = ma",
+          "poin_nilai": 4
+        },
+        {
+          "id": 197,
+          "teks_pertanyaan": "Apa yang dimaksud dengan gaya sentripetal?",
+          "pilihan_jawaban": [
+            "Gaya yang menarik suatu benda ke pusat lingkaran",
+            "Gaya yang searah dengan gerakan suatu benda",
+            "Gaya yang tegak lurus dengan arah gerakan suatu benda",
+            "Gaya yang mempertahankan kecepatan suatu benda",
+            "Gaya yang menyebabkan rotasi suatu benda"
+          ],
+          "jawaban_benar": "Gaya yang menarik suatu benda ke pusat lingkaran",
+          "poin_nilai": 4
+        },
+        {
+          "id": 198,
+          "teks_pertanyaan": "Apa yang dimaksud dengan gaya gesek?",
+          "pilihan_jawaban": [
+            "Gaya yang menarik suatu benda ke pusat lingkaran",
+            "Gaya yang searah dengan gerakan suatu benda",
+            "Gaya yang tegak lurus dengan arah gerakan suatu benda",
+            "Gaya yang mempertahankan kecepatan suatu benda",
+            "Gaya yang menyebabkan rotasi suatu benda"
+          ],
+          "jawaban_benar": "Gaya yang searah dengan gerakan suatu benda",
+          "poin_nilai": 4
+        },
+        {
+          "id": 199,
+          "teks_pertanyaan": "Apa rumus hukum Coulomb?",
+          "pilihan_jawaban": ["F = ma", "F = G(m1m2)/r^2", "F = kx", "F = kq1q2/r^2", "F = ρVg"],
+          "jawaban_benar": "F = kq1q2/r^2",
+          "poin_nilai": 4
+        },
+        {
+          "id": 200,
+          "teks_pertanyaan": "Apa yang dimaksud dengan medan listrik?",
+          "pilihan_jawaban": [
+            "Ketebalan suatu kawat",
+            "Ruang di sekitar suatu muatan listrik",
+            "Gaya yang disebabkan oleh pemuaian",
+            "Jumlah gerakan suatu benda",
+            "Perubahan posisi suatu benda"
+          ],
+          "jawaban_benar": "Ruang di sekitar suatu muatan listrik",
+          "poin_nilai": 4
+        },
+        {
+          "id": 201,
+          "teks_pertanyaan": "Apa rumus hukum Ohm?",
+          "pilihan_jawaban": ["V = IR", "F = G(m1m2)/r^2", "E = mc^2", "p = mv", "P = IV"],
+          "jawaban_benar": "V = IR",
+          "poin_nilai": 4
+        },
+        {
+          "id": 202,
+          "teks_pertanyaan": "Apa rumus hukum Archimedes?",
+          "pilihan_jawaban": ["F = ma", "F = G(m1m2)/r^2", "F = kx", "F = P/A", "F = ρVg"],
+          "jawaban_benar": "F = ρVg",
+          "poin_nilai": 4
+        },
+        {
+          "id": 203,
+          "teks_pertanyaan": "Apa yang dimaksud dengan suhu?",
+          "pilihan_jawaban": [
+            "Gaya yang menarik suatu benda ke pusat lingkaran",
+            "Tingkat panas suatu benda",
+            "Gaya yang tegak lurus dengan arah gerakan suatu benda",
+            "Gaya yang mempertahankan kecepatan suatu benda",
+            "Gaya yang menyebabkan rotasi suatu benda"
+          ],
+          "jawaban_benar": "Tingkat panas suatu benda",
+          "poin_nilai": 4
+        },
+        {
+          "id": 204,
+          "teks_pertanyaan": "Apa rumus hukum Pascal?",
+          "pilihan_jawaban": ["P1V1 = P2V2", "F = ma", "E = mc^2", "p = mv", "P = IV"],
+          "jawaban_benar": "P1V1 = P2V2",
+          "poin_nilai": 4
+        },
+        {
+          "id": 205,
+          "teks_pertanyaan": "Apa yang dimaksud dengan gelombang elektromagnetik?",
+          "pilihan_jawaban": [
+            "Gelombang suara",
+            "Gelombang cahaya",
+            "Gelombang radio",
+            "Gelombang laut",
+            "Gelombang gempa"
+          ],
+          "jawaban_benar": "Gelombang cahaya",
+          "poin_nilai": 4
+        },
+        {
+          "id": 206,
+          "teks_pertanyaan": "Apa rumus hukum Snellius?",
+          "pilihan_jawaban": ["n1sinθ1 = n2sinθ2", "F = G(m1m2)/r^2", "F = kx", "F = P/A", "F = ρVg"],
+          "jawaban_benar": "n1sinθ1 = n2sinθ2",
+          "poin_nilai": 4
+        }
+      ],
+      "media": {
+        "data": null
+      },
+      "users": {
+        "data": []
+      }
+    }
+  },
+  {
+    "id": 45,
+    "attributes": {
+      "nama_ujian": "Biologi",
+      "deskripsi": "Ujian mata pelajaran Biologi",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2023-12-30T09:00:00.000Z",
+      "pengawas": "Nama Guru Biologi",
+      "createdAt": "2023-12-28T04:27:27.026Z",
+      "updatedAt": "2023-12-28T04:27:27.026Z",
+      "hasil_ujian": {
+        "data": null
+      },
+      "ruang_ujian": {
+        "data": null
+      },
+      "soal_ujians": {
+        "data": []
+      },
+      "soal": [
+        {
+          "id": 207,
+          "teks_pertanyaan": "Apa yang dimaksud dengan fotosintesis?",
+          "pilihan_jawaban": [
+            "Proses pembentukan energi dalam bentuk ATP",
+            "Pertukaran gas di dalam tumbuhan",
+            "Proses pembentukan glukosa menggunakan energi cahaya",
+            "Pernapasan seluler",
+            "Penguraian senyawa organik menjadi energi"
+          ],
+          "jawaban_benar": "Proses pembentukan glukosa menggunakan energi cahaya",
+          "poin_nilai": 4
+        },
+        {
+          "id": 208,
+          "teks_pertanyaan": "Berapa jumlah ruang bilik jantung pada manusia?",
+          "pilihan_jawaban": ["1", "2", "3", "4", "5"],
+          "jawaban_benar": "4",
+          "poin_nilai": 4
+        },
+        {
+          "id": 209,
+          "teks_pertanyaan": "Apa peran DNA dalam sel?",
+          "pilihan_jawaban": [
+            "Menghasilkan energi",
+            "Menyimpan informasi genetik",
+            "Mengatur pertumbuhan sel",
+            "Menghasilkan protein",
+            "Menghasilkan RNA"
+          ],
+          "jawaban_benar": "Menyimpan informasi genetik",
+          "poin_nilai": 4
+        },
+        {
+          "id": 210,
+          "teks_pertanyaan": "Apa yang dimaksud dengan ekosistem?",
+          "pilihan_jawaban": [
+            "Kumpulan organisme yang hidup bersama",
+            "Interaksi antara organisme dengan lingkungan fisiknya",
+            "Pertukaran zat antara organisme",
+            "Rantai makanan dalam suatu komunitas",
+            "Daerah yang memiliki flora dan fauna khas"
+          ],
+          "jawaban_benar": "Interaksi antara organisme dengan lingkungan fisiknya",
+          "poin_nilai": 4
+        },
+        {
+          "id": 211,
+          "teks_pertanyaan": "Apa fungsi selulosa pada tumbuhan?",
+          "pilihan_jawaban": [
+            "Menyimpan energi",
+            "Memberikan bentuk dan dukungan",
+            "Menghasilkan oksigen",
+            "Mengatur pertumbuhan sel",
+            "Menghasilkan senyawa aromatik"
+          ],
+          "jawaban_benar": "Memberikan bentuk dan dukungan",
+          "poin_nilai": 4
+        },
+        {
+          "id": 212,
+          "teks_pertanyaan": "Berapa jumlah tulang manusia dewasa?",
+          "pilihan_jawaban": ["150", "206", "120", "180", "250"],
+          "jawaban_benar": "206",
+          "poin_nilai": 4
+        },
+        {
+          "id": 213,
+          "teks_pertanyaan": "Apa perbedaan antara mitosis dan meiosis?",
+          "pilihan_jawaban": [
+            "Mitosis menghasilkan sel haploid, meiosis menghasilkan sel diploid",
+            "Mitosis menghasilkan dua sel identik, meiosis menghasilkan empat sel berbeda",
+            "Mitosis terjadi pada sel reproduksi, meiosis pada sel somatik",
+            "Mitosis menghasilkan sel diploid, meiosis menghasilkan sel haploid",
+            "Mitosis melibatkan satu pembelahan sel, meiosis melibatkan dua pembelahan sel"
+          ],
+          "jawaban_benar": "Mitosis menghasilkan dua sel identik, meiosis menghasilkan empat sel berbeda",
+          "poin_nilai": 4
+        },
+        {
+          "id": 214,
+          "teks_pertanyaan": "Apa yang dimaksud dengan rantai makanan?",
+          "pilihan_jawaban": [
+            "Proses fotosintesis dalam ekosistem",
+            "Pertukaran energi antara organisme",
+            "Urutan transfer energi dari produsen ke konsumen",
+            "Proses respirasi seluler",
+            "Kumpulan organisme dalam suatu habitat"
+          ],
+          "jawaban_benar": "Urutan transfer energi dari produsen ke konsumen",
+          "poin_nilai": 4
+        },
+        {
+          "id": 215,
+          "teks_pertanyaan": "Apa yang membedakan bakteri dan virus?",
+          "pilihan_jawaban": [
+            "Bakteri bersel tunggal, virus bersel banyak",
+            "Bakteri seluler, virus acelular",
+            "Bakteri mengandung DNA, virus mengandung RNA",
+            "Bakteri dapat hidup bebas, virus harus bersifat parasit",
+            "Bakteri memiliki membran sel, virus tidak memiliki membran sel"
+          ],
+          "jawaban_benar": "Bakteri seluler, virus acelular",
+          "poin_nilai": 4
+        },
+        {
+          "id": 216,
+          "teks_pertanyaan": "Apa yang dimaksud dengan pernapasan aerobik?",
+          "pilihan_jawaban": [
+            "Pernapasan yang tidak menggunakan oksigen",
+            "Pernapasan yang menggunakan oksigen",
+            "Pernapasan yang hanya melibatkan karbon dioksida",
+            "Pernapasan pada organisme anaerob",
+            "Pernapasan pada hewan saja"
+          ],
+          "jawaban_benar": "Pernapasan yang menggunakan oksigen",
+          "poin_nilai": 4
+        },
+        {
+          "id": 217,
+          "teks_pertanyaan": "Apa fungsi mitokondria dalam sel?",
+          "pilihan_jawaban": [
+            "Pembentukan protein",
+            "Pembentukan energi dalam bentuk ATP",
+            "Penyimpanan materi genetik",
+            "Pertumbuhan dan perkembangan sel",
+            "Pengaturan tekanan osmotik"
+          ],
+          "jawaban_benar": "Pembentukan energi dalam bentuk ATP",
+          "poin_nilai": 4
+        },
+        {
+          "id": 218,
+          "teks_pertanyaan": "Berapa jumlah kromosom pada manusia?",
+          "pilihan_jawaban": ["23", "46", "22", "56", "33"],
+          "jawaban_benar": "46",
+          "poin_nilai": 4
+        },
+        {
+          "id": 219,
+          "teks_pertanyaan": "Apa yang dimaksud dengan biomassa?",
+          "pilihan_jawaban": [
+            "Total massa organisme dalam suatu ekosistem",
+            "Jumlah energi yang dihasilkan selama fotosintesis",
+            "Massa total sel dalam suatu organisme",
+            "Massa total bakteri dalam suatu ekosistem",
+            "Massa total tumbuhan dalam suatu habitat"
+          ],
+          "jawaban_benar": "Total massa organisme dalam suatu ekosistem",
+          "poin_nilai": 4
+        },
+        {
+          "id": 220,
+          "teks_pertanyaan": "Apa peran enzim dalam sel?",
+          "pilihan_jawaban": [
+            "Menyimpan energi",
+            "Menghasilkan protein",
+            "Mengatur pertumbuhan sel",
+            "Mempercepat reaksi kimia dalam sel",
+            "Menghasilkan RNA"
+          ],
+          "jawaban_benar": "Mempercepat reaksi kimia dalam sel",
+          "poin_nilai": 4
+        },
+        {
+          "id": 221,
+          "teks_pertanyaan": "Apa yang dimaksud dengan simbiosis?",
+          "pilihan_jawaban": [
+            "Hubungan antara predator dan mangsanya",
+            "Hubungan timbal balik antara dua spesies",
+            "Perubahan warna kulit pada hewan",
+            "Proses pencernaan dalam tubuh manusia",
+            "Penyusunan kromosom selama pembelahan sel"
+          ],
+          "jawaban_benar": "Hubungan timbal balik antara dua spesies",
+          "poin_nilai": 4
+        },
+        {
+          "id": 222,
+          "teks_pertanyaan": "Apa perbedaan antara DNA dan RNA?",
+          "pilihan_jawaban": [
+            "DNA mengandung tiga gugus fosfat, RNA mengandung dua gugus fosfat",
+            "DNA bersifat satu untai, RNA bersifat dua untai",
+            "DNA mengandung basa nitrogen adenin, RNA mengandung basa nitrogen timin",
+            "DNA mengandung deoksiribosa, RNA mengandung ribosa",
+            "DNA mengandung basa nitrogen urasil, RNA mengandung basa nitrogen tiamin"
+          ],
+          "jawaban_benar": "DNA mengandung deoksiribosa, RNA mengandung ribosa",
+          "poin_nilai": 4
+        },
+        {
+          "id": 223,
+          "teks_pertanyaan": "Apa yang dimaksud dengan metamorfosis?",
+          "pilihan_jawaban": [
+            "Proses reproduksi sel",
+            "Perubahan bentuk tubuh dalam siklus hidup organisme",
+            "Proses respirasi seluler",
+            "Perubahan warna kulit pada hewan",
+            "Penyusunan kromosom selama pembelahan sel"
+          ],
+          "jawaban_benar": "Perubahan bentuk tubuh dalam siklus hidup organisme",
+          "poin_nilai": 4
+        },
+        {
+          "id": 224,
+          "teks_pertanyaan": "Apa yang dimaksud dengan keanekaragaman hayati?",
+          "pilihan_jawaban": [
+            "Jumlah total organisme dalam suatu ekosistem",
+            "Variasi genetik dalam suatu populasi",
+            "Jumlah spesies dalam suatu habitat",
+            "Perubahan suatu spesies menjadi spesies baru",
+            "Proses adaptasi organisme terhadap lingkungannya"
+          ],
+          "jawaban_benar": "Variasi genetik dalam suatu populasi",
+          "poin_nilai": 4
+        },
+        {
+          "id": 225,
+          "teks_pertanyaan": "Apa yang dimaksud dengan daur nitrogen?",
+          "pilihan_jawaban": [
+            "Siklus hidup organisme dalam ekosistem",
+            "Pertukaran nitrogen antara organisme",
+            "Proses fotosintesis pada tumbuhan",
+            "Perubahan warna kulit pada hewan",
+            "Proses respirasi seluler"
+          ],
+          "jawaban_benar": "Pertukaran nitrogen antara organisme",
+          "poin_nilai": 4
+        }
+      ],
+      "media": {
+        "data": null
+      },
+      "users": {
+        "data": []
       }
     }
   }

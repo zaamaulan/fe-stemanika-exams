@@ -1,9 +1,10 @@
-import { addSeconds, differenceInSeconds, format } from 'date-fns'; // Import format and addSeconds functions
+import { addSeconds, differenceInSeconds, format } from 'date-fns' // Import format and addSeconds functions
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useUjianContext } from '../../context/ujianContext'
 import Card from '../Card/Card'
 import Button from '../UI/Button'
+import { useResultContext } from '../../context/scoreContext'
 
 const UjianForm = () => {
   const navigate = useNavigate()
@@ -12,6 +13,7 @@ const UjianForm = () => {
   const [answers, setAnswers] = useState([])
   const [score, setScore] = useState(0)
   const { ujianData } = useUjianContext()
+  // const { updateScore } = useResultContext();
 
   const [startTime, setStartTime] = useState(new Date())
   const [endTime, setEndTime] = useState(null)
@@ -105,18 +107,20 @@ const UjianForm = () => {
 
   const handleSubmit = () => {
     if (answers.some((answer) => answer === null)) {
-      console.log('Harus menjawab semua pertanyaan!')
-      return
+      console.log('Harus menjawab semua pertanyaan!');
+      return;
     } else {
       const newScore = answers.reduce(
         (acc, answer, index) => (answer === examData.attributes.soal[index].jawaban_benar ? acc + 4 : acc),
         0,
-      )
+      );
+
+      // updateScore(newScore);
 
       setScore(newScore)
       console.log('Skor akhir:', newScore)
 
-      navigate('/result')
+      // navigate('/result')
 
       localStorage.removeItem('startTime')
       localStorage.removeItem('endTime')
@@ -126,7 +130,7 @@ const UjianForm = () => {
   const { attributes } = examData
 
   return (
-    <div className="px-6  xl:flex xl:w-full xl:flex-col xl:px-40 xl:py-20">
+    <div className="px-6  xl:flex xl:w-full xl:flex-col xl:px-[20rem] xl:py-20">
       {attributes && (
         <>
           <h1 className="mb-2 flex text-4xl font-bold text-black xl:text-5xl/[1.3]">{attributes.nama_ujian}</h1>
@@ -139,25 +143,25 @@ const UjianForm = () => {
               attributes.soal.map((q, index) => (
                 <div key={q.id}>
                   <Card>
-                    <p className="mb-4 text-lg font-bold">Pertanyaan {index}</p>
+                    <p className="mb-4 text-lg font-bold">Pertanyaan {index + 1}</p>
                     <p className="mb-6 text-black xl:text-lg">{q.teks_pertanyaan}</p>
                     <ul className="flex flex-col gap-y-2">
                       {q.pilihan_jawaban.map((option, optionIndex) => (
                         <li key={optionIndex}>
                           <label
-                            className="flex cursor-pointer items-center gap-x-3"
-                            onClick={() => handleChange(index, option)}
+                            className={`flex cursor-pointer items-center gap-x-3 transition-all duration-300 ${answers[index] === option && 'bg-black text-white rounded-md py-2 px-4' }`}
+                            onClick={() => handleChange(index, option) }
                           >
                             <div
-                              className={`flex h-4 w-4 items-center justify-center   md:h-5 md:w-5 ${
-                                answers[index] === option ? ' text-white' : 'rounded-full border border-gray-400'
-                              }`}
+                              className={`flex h-4 w-4 items-center justify-center md:h-5 md:w-5
+                              ${answers[index] === option ? 'text-white' : 'rounded-full border border-gray-400'}
+                              flex-shrink-0`}
                             >
                               {answers[index] === option && (
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 20 20"
-                                  fill="black"
+                                  fill="white"
                                   className="h-5 w-5"
                                 >
                                   <path d="M15.98 1.804a1 1 0 0 0-1.96 0l-.24 1.192a1 1 0 0 1-.784.785l-1.192.238a1 1 0 0 0 0 1.962l1.192.238a1 1 0 0 1 .785.785l.238 1.192a1 1 0 0 0 1.962 0l.238-1.192a1 1 0 0 1 .785-.785l1.192-.238a1 1 0 0 0 0-1.962l-1.192-.238a1 1 0 0 1-.785-.785l-.238-1.192ZM6.949 5.684a1 1 0 0 0-1.898 0l-.683 2.051a1 1 0 0 1-.633.633l-2.051.683a1 1 0 0 0 0 1.898l2.051.684a1 1 0 0 1 .633.632l.683 2.051a1 1 0 0 0 1.898 0l.683-2.051a1 1 0 0 1 .633-.633l2.051-.683a1 1 0 0 0 0-1.898l-2.051-.683a1 1 0 0 1-.633-.633L6.95 5.684ZM13.949 13.684a1 1 0 0 0-1.898 0l-.184.551a1 1 0 0 1-.632.633l-.551.183a1 1 0 0 0 0 1.898l.551.183a1 1 0 0 1 .633.633l.183.551a1 1 0 0 0 1.898 0l.184-.551a1 1 0 0 1 .632-.633l.551-.183a1 1 0 0 0 0-1.898l-.551-.184a1 1 0 0 1-.633-.632l-.183-.551Z" />

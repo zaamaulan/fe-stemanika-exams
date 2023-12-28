@@ -12,7 +12,7 @@ export const UjianProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}/api/ujians?populate=*`) // Use the function from your api.js file
+        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}/api/ujianas?populate=*`) // Use the function from your api.js file
         setUjianData(response.data.data)
       } catch (error) {
         setUjianData(dummyExam)
