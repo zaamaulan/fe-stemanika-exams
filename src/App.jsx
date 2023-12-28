@@ -14,7 +14,7 @@ import UjianForm from './components/Ujian/UjianForm'
 
 const routes = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/'>
       <Routes>
         <Route element={<PrivateWrapper />}>
           <Route path="/" element={<Layout />}>
