@@ -53,6 +53,16 @@ const NavBar = () => {
           <Link to={'/about'} className="tracking-wide">
             Tentang Kami
           </Link>
+
+          <span
+            className="cursor-pointer tracking-wide"
+            onClick={() => {
+              localStorage.removeItem('token')
+              navigate('/user/login')
+            }}
+          >
+            Log Out
+          </span>
         </div>
         <Link to={'/profile'}>
           <img src="/profile.jpg" alt="" className="xl:w-10 xl:rounded-full" />
@@ -118,6 +128,16 @@ const NavBar = () => {
               <Link to={'/about'} onClick={() => handleLinkClick('/about')} className="tracking-wide">
                 Tentang Kami
               </Link>
+            </span>
+
+            <span
+              className="cursor-pointer tracking-wide"
+              onClick={() => {
+                localStorage.removeItem('token')
+                navigate('/user/login')
+              }}
+            >
+              Log Out
             </span>
           </div>
         </motion.div>

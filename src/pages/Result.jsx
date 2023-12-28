@@ -1,9 +1,11 @@
 import React from 'react';
+import { useResultContext } from '../context/scoreContext';
 
 const Result = () => {
+    const { score } = useResultContext();
     return (
         <div className='grid place-items-center h-screen'>
-            Hasil
+            <h1>Your Score: {score}</h1>
         </div>
     );
 };

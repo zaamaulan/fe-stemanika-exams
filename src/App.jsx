@@ -16,7 +16,7 @@ const routes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route element={<PrivateWrapper />}> */}
+        <Route element={<PrivateWrapper />}>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/exam" element={<Ujian />}></Route>
@@ -28,7 +28,7 @@ const routes = () => {
           <Route path="/about" element={<About />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
         </Route>
-        {/* </Route> */}
+        </Route>
         <Route path="/user/login" element={<Login />}></Route>
       </Routes>
     </BrowserRouter>

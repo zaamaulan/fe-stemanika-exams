@@ -5,13 +5,16 @@ import App from './App.jsx'
 import { AuthProvider } from './context/authContext.jsx'
 import { UjianProvider } from './context/ujianContext.jsx'
 import './index.css'
+import { ResultProvider } from './context/scoreContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
       <AuthProvider>
         <UjianProvider>
-          <App />
+          {/* <ResultProvider> */}
+            <App />
+          {/* </ResultProvider> */}
         </UjianProvider>
       </AuthProvider>{' '}
     </HelmetProvider>
