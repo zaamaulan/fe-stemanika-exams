@@ -9,11 +9,12 @@ import { useResultContext } from '../../context/scoreContext'
 const UjianForm = () => {
   const navigate = useNavigate()
   const { examId } = useParams()
+  const [isFilled, setIsFilled] = useState(false)
   const [examData, setExamData] = useState({})
   const [answers, setAnswers] = useState([])
   const [score, setScore] = useState(0)
   const { ujianData } = useUjianContext()
-  // const { updateScore } = useResultContext();
+  const { updateScore } = useResultContext();
 
   const [startTime, setStartTime] = useState(new Date())
   const [endTime, setEndTime] = useState(null)
@@ -22,6 +23,19 @@ const UjianForm = () => {
   const [storedExamDuration, setStoredExamDuration] = useState(0)
   const [currentTime, setCurrentTime] = useState(format(new Date(), 'HH:mm:ss'))
   const [timeDifference, setTimeDifference] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0)
+
+  const handleNextPage = () => {
+    if (currentPage < examData.attributes.soal.length - 1) {
+      setCurrentPage(currentPage + 1)
+    }
+  }
+
+  const handlePrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1)
+    }
+  }
 
   useEffect(() => {
     const existingExamData = ujianData.find((ujian) => ujian.id === parseInt(examId))
@@ -83,6 +97,12 @@ const UjianForm = () => {
         localStorage.setItem('endTime', format(endTime, 'HH:mm:ss'))
         setEndTime(endTime)
       }
+
+      if (currentTime === storedEndTime) {
+        navigate('/exam')
+        localStorage.removeItem('startTime')
+        localStorage.removeItem('endTime')
+      }
     }
 
     const intervalId = setInterval(() => {
@@ -99,28 +119,41 @@ const UjianForm = () => {
     return () => clearInterval(intervalId)
   }, [currentTime, formattedRemainingTime, endTime, formattedRemainingTime])
 
-  const handleChange = (index, selectedOption) => {
+  const handleChange = (selectedOption) => {
     const newAnswers = [...answers]
-    newAnswers[index] = selectedOption
+    newAnswers[currentPage] = selectedOption
     setAnswers(newAnswers)
   }
 
   const handleSubmit = () => {
     if (answers.some((answer) => answer === null)) {
-      console.log('Harus menjawab semua pertanyaan!');
-      return;
+      setIsFilled(true)
+      return
     } else {
-      const newScore = answers.reduce(
-        (acc, answer, index) => (answer === examData.attributes.soal[index].jawaban_benar ? acc + 4 : acc),
-        0,
-      );
+      const { soal } = examData.attributes
+
+      const result = answers.reduce(
+        (acc, answer, index) => {
+          const isCorrect = answer === soal[index].jawaban_benar
+          return {
+            correctCount: isCorrect ? acc.correctCount + 1 : acc.correctCount,
+            wrongCount: isCorrect ? acc.wrongCount : acc.wrongCount + 1,
+          }
+        },
+        { correctCount: 0, wrongCount: 0 },
+      )
+
+      const newScore = result.correctCount * 4
 
       // updateScore(newScore);
 
       setScore(newScore)
+      updateScore(newScore)
       console.log('Skor akhir:', newScore)
+      console.log('Soal yang benar:', result.correctCount)
+      console.log('Soal yang salah:', result.wrongCount)
 
-      // navigate('/result')
+      navigate('/result')
 
       localStorage.removeItem('startTime')
       localStorage.removeItem('endTime')
@@ -130,34 +163,49 @@ const UjianForm = () => {
   const { attributes } = examData
 
   return (
-    <div className="px-6  xl:flex xl:w-full xl:flex-col xl:px-[20rem] xl:py-20">
+    <div className="px-6 xl:flex xl:w-full xl:flex-col xl:px-[20rem] xl:py-2">
       {attributes && (
-        <>
-          <h1 className="mb-2 flex text-4xl font-bold text-black xl:text-5xl/[1.3]">{attributes.nama_ujian}</h1>
-          <p className="mb-6 max-w-screen-md text-sm text-gray-600 xl:text-base">{attributes.deskripsi}</p>
-          <p className="sticky top-16 mb-2 flex bg-white  py-4 text-sm font-medium  text-black xl:top-20 xl:text-xl">
-            Waktu tersisa: {formattedRemainingTime}
-          </p>
-          <div className="grid grid-cols-1 gap-6">
-            {attributes.soal && attributes.soal.length > 0 ? (
-              attributes.soal.map((q, index) => (
-                <div key={q.id}>
+        <div className="flex min-h-[86dvh] flex-col justify-between">
+          <div>
+            <h1 className="mb-2 flex text-4xl font-bold text-black xl:text-5xl/[1.3]">{attributes.nama_ujian}</h1>
+            <p className="mb-6 max-w-screen-md text-sm text-gray-600 xl:text-base">{attributes.deskripsi}</p>
+            <p className=" mb-2 flex bg-white  py-4 text-sm font-medium  text-black xl:text-xl">
+              Waktu tersisa: {formattedRemainingTime}
+            </p>
+            {isFilled && <div className="pb-4 font-semibold text-red-500">Semua soal harus diisi!</div>}
+
+            {/* {isFilled && (
+              <div className="relative z-20 flex justify-center">
+                {' '}
+                <Modal
+                  title={'upps!'}
+                  content={
+                    'Tebak jawaban yang kamu tidak tahu. Jika kamu benar-benar tidak tahu jawabannya, tebak saja. Lebih baik menebak daripada tidak sama sekali.'
+                  }
+                />
+              </div>
+            )} */}
+            <div className="grid grid-cols-1 gap-6 transition-all">
+              {attributes.soal && attributes.soal.length > 0 ? (
+                <div key={attributes.soal[currentPage].id}>
                   <Card>
-                    <p className="mb-4 text-lg font-bold">Pertanyaan {index + 1}</p>
-                    <p className="mb-6 text-black xl:text-lg">{q.teks_pertanyaan}</p>
+                    <p className="mb-4 text-lg font-bold">Pertanyaan {currentPage + 1}</p>
+                    <p className="mb-6 text-black xl:text-lg">{attributes.soal[currentPage].teks_pertanyaan}</p>
                     <ul className="flex flex-col gap-y-2">
-                      {q.pilihan_jawaban.map((option, optionIndex) => (
+                      {attributes.soal[currentPage].pilihan_jawaban.map((option, optionIndex) => (
                         <li key={optionIndex}>
                           <label
-                            className={`flex cursor-pointer items-center gap-x-3 transition-all duration-300 ${answers[index] === option && 'bg-black text-white rounded-md py-2 px-4' }`}
-                            onClick={() => handleChange(index, option) }
+                            className={`flex cursor-pointer items-center gap-x-3 transition-all duration-300 ${
+                              answers[currentPage] === option && 'rounded-md bg-black px-3 py-2 text-white'
+                            }`}
+                            onClick={() => handleChange(option)}
                           >
                             <div
                               className={`flex h-4 w-4 items-center justify-center md:h-5 md:w-5
-                              ${answers[index] === option ? 'text-white' : 'rounded-full border border-gray-400'}
+                              ${answers[currentPage] === option ? 'text-white' : 'rounded-full border border-gray-400'}
                               flex-shrink-0`}
                             >
-                              {answers[index] === option && (
+                              {answers[currentPage] === option && (
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 20 20"
@@ -175,16 +223,29 @@ const UjianForm = () => {
                     </ul>
                   </Card>
                 </div>
-              ))
-            ) : (
-              <p>No questions available.</p>
-            )}{' '}
+              ) : (
+                <p>No questions available.</p>
+              )}
+            </div>
           </div>
 
-          <div onClick={handleSubmit} className="my-6">
-            <Button>Submit</Button>
+          <div className="my-6 flex gap-2 xl:gap-6">
+            {currentPage > 0 && (
+              <Button onClick={handlePrevPage} className={'bg-black text-white xl:w-full'}>
+                Previous
+              </Button>
+            )}
+            {currentPage < attributes.soal.length - 1 ? (
+              <Button onClick={handleNextPage} className={'bg-black text-white xl:w-full'}>
+                Next
+              </Button>
+            ) : (
+              <Button onClick={handleSubmit} className={'bg-black text-white xl:w-full'}>
+                Submit
+              </Button>
+            )}
           </div>
-        </>
+        </div>
       )}
     </div>
   )
