@@ -81,12 +81,13 @@ const UjianDetail = () => {
                   <p className="mb-2 flex text-sm text-black xl:text-base">
                     Durasi Pengerjaan: {ujian.attributes.durasi_ujian} menit
                   </p>
+                  <p className="mb-2 flex text-sm text-black xl:text-base">
+                    Jumlah Pertanyaan: {ujian.attributes.jumlah_soal} pertanyaan
+                  </p>
                 </div>
 
-                {/* {status} */}
-                <Link to={`/exam/${examId}/form`}>
-                  <Button className={' bg-black text-white '}>Mulai Kerjakan</Button>
-                </Link>
+                {status}
+               
               </div>
               <motion.div className="pt-20 xl:pt-0">
                 <motion.h1
