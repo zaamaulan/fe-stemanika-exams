@@ -118,43 +118,44 @@ const App = () => {
           </div>
         </div>
       </section>
-      {daftarujian ? (
-        <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20">
-          <div className="min-w-sm mb-6 w-full xl:mb-14">
-            <h1 className="mb-2 text-2xl font-bold text-black xl:text-3xl">Daftar Ujian</h1>
-            <p className="mb-6  text-sm text-gray-500 xl:text-base">Mari Bersiap, Pekan Ini Penuh Keajaiban Belajar!</p>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
-              {daftarujian.map((ujian) => {
-                let tagComponent = null
 
-                const currentTime = new Date()
-                const waktuMulai = new Date(ujian.attributes.waktu_mulai)
-                const waktuSelesai = new Date(waktuMulai.getTime() + ujian.attributes.durasi_ujian * 60000)
-                const selisihMenit = differenceInMinutes(waktuMulai, currentTime)
+      <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20 w-full">
+        <div className="min-w-sm mb-6 w-full xl:mb-14">
+          <h1 className="mb-2 text-2xl font-bold text-black xl:text-3xl">Daftar Ujian</h1>
+          <p className="mb-6  text-sm text-gray-500 xl:text-base">Mari Bersiap, Pekan Ini Penuh Keajaiban Belajar!</p>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
+            {daftarujian.map((ujian) => {
+              let tagComponent = null
 
-                if (currentTime >= waktuMulai && currentTime <= waktuSelesai) {
-                  tagComponent = <OngoingTags />
-                } else if (selisihMenit > 30) {
-                  tagComponent = <UpcomingTags />
-                } else if (selisihMenit <= 3 && selisihMenit >= 0) {
-                  tagComponent = <LastMinutePreparationTags />
-                } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) < 3) {
-                  tagComponent = <PostExamReflectionPreTags />
-                } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) >= 3) {
-                  tagComponent = <CompletedTags />
-                }
+              const currentTime = new Date()
+              const waktuMulai = new Date(ujian.attributes.waktu_mulai)
+              const waktuSelesai = new Date(waktuMulai.getTime() + ujian.attributes.durasi_ujian * 60000)
+              const selisihMenit = differenceInMinutes(waktuMulai, currentTime)
 
-                return (
-                  <motion.div
-                    key={ujian.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      delay: 0.4,
-                    }}
-                    viewport={{ once: true }}
-                  >
+              if (currentTime >= waktuMulai && currentTime <= waktuSelesai) {
+                tagComponent = <OngoingTags />
+              } else if (selisihMenit > 30) {
+                tagComponent = <UpcomingTags />
+              } else if (selisihMenit <= 3 && selisihMenit >= 0) {
+                tagComponent = <LastMinutePreparationTags />
+              } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) < 3) {
+                tagComponent = <PostExamReflectionPreTags />
+              } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) >= 3) {
+                tagComponent = <CompletedTags />
+              }
+
+              return (
+                <motion.div
+                  key={ujian.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.4,
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <Link to={`/exam/${ujian.id}`}>
                     <Card>
                       <div className="mb-10">
                         {tagComponent}
@@ -173,12 +174,14 @@ const App = () => {
                           Durasi Pengerjaan: {ujian.attributes.durasi_ujian} menit
                         </p>
                       </div>
-                    </Card>
-                  </motion.div>
-                )
-              })}
-            </div>
+                    </Card>{' '}
+                  </Link>
+                </motion.div>
+              )
+            })}
           </div>
+        </div>
+        {ujianData && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -192,114 +195,9 @@ const App = () => {
               <Button> Lihat Semua Ujian</Button>
             </Link>
           </motion.div>
-        </section>
-      ) : (
-        <>
-          <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20">
-            <div className="min-w-sm mb-6 w-full xl:mb-14">
-              <h1 className="mb-2 text-2xl font-bold text-black xl:text-3xl">Daftar Ujian</h1>
-              <p className="mb-6  text-sm text-gray-500 xl:text-base">
-                Mari Bersiap, Pekan Ini Penuh Keajaiban Belajar!
-              </p>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.4,
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <Card>
-                    <div className="mb-10">
-                      <CompletedTags />
-                      <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
+        )}
+      </section>
 
-                      <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
-                        nostrum dolor aliquam? Voluptatum quidem iure perspiciatis!
-                      </p>
-                    </div>
-                    <div>
-                      <p className="mb-2 text-sm font-medium text-black">
-                        Tanggal: {format(new Date(), 'dd MMMM yyyy', { locale: id })}
-                      </p>
-                      <p className="mb-2 text-sm font-medium text-black">
-                        Pukul: {format(new Date(), 'HH:mm', { locale: id })} WIB
-                      </p>
-                      <p className="mb-2 text-sm font-medium text-black">Durasi Pengerjaan: 60 menit</p>
-                    </div>
-                  </Card>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.4,
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <Card>
-                    <div className="mb-10">
-                      <UpcomingTags />
-                      <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
-
-                      <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
-                        nostrum dolor aliquam? Voluptatum quidem iure perspiciatis!
-                      </p>
-                    </div>
-                    <div>
-                      <p className="mb-2 text-sm font-medium text-black">
-                        Tanggal: {format(new Date(), 'dd MMMM yyyy', { locale: id })}
-                      </p>
-                      <p className="mb-2 text-sm font-medium text-black">
-                        Pukul: {format(new Date(), 'HH:mm', { locale: id })} WIB
-                      </p>
-                      <p className="mb-2 text-sm font-medium text-black">Durasi Pengerjaan: 60 menit</p>
-                    </div>
-                  </Card>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.4,
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <Card>
-                    <div className="mb-10">
-                      <LastMinutePreparationTags />
-                      <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">Lorem ipsum dolor sit amet</h1>
-
-                      <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo officia tempore, rem doloremque
-                        nostrum dolor aliquam? Voluptatum quidem iure perspiciatis!
-                      </p>
-                    </div>
-                    <div>
-                      <p className="mb-2 text-sm font-medium text-black">
-                        Tanggal: {format(new Date(), 'dd MMMM yyyy', { locale: id })}
-                      </p>
-                      <p className="mb-2 text-sm font-medium text-black">
-                        Pukul: {format(new Date(), 'HH:mm', { locale: id })} WIB
-                      </p>
-                      <p className="mb-2 text-sm font-medium text-black">Durasi Pengerjaan: 60 menit</p>
-                    </div>
-                  </Card>
-                </motion.div>
-              </div>
-            </div>
-            <Link to={'/ujian'}>
-              <Button> Lihat Semua Ujian</Button>
-            </Link>
-          </section>
-        </>
-      )}
       <section className="py-10 xl:flex  xl:flex-col xl:items-center xl:px-40 xl:py-20">
         <div className="min-w-sm mb-6 w-full xl:mb-14">
           <h1 className="mb-2 text-2xl font-bold text-black xl:text-4xl">Panduan Ujian</h1>
@@ -324,7 +222,10 @@ const App = () => {
                       Persiapan Sebelum Ujian
                     </h1>
                     <div>
-                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl"> Perangkat yang diperlukan:</p>
+                      <p className="mb-2 mt-4 text-base font-semibold text-black xl:text-xl">
+                        {' '}
+                        Perangkat yang diperlukan:
+                      </p>
                       <p className="mb-5 text-sm text-gray-500 xl:mb-5 xl:text-base">
                         Pastikan Anda menggunakan perangkat dengan koneksi internet stabil. Gunakan peramban web terbaru
                         seperti <strong>Google Chrome</strong>, <strong>Mozilla Firefox</strong>, atau{' '}
