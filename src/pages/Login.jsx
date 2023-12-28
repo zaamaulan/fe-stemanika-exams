@@ -33,16 +33,6 @@ const Login = () => {
 
       navigate('/')
     } catch (error) {
-
-      // <---- hanya untuk preview FrontEnd
-      const token = 'login'
-
-      login(token)
-
-      localStorage.setItem('token', token)
-      navigate('/')
-      // hanya untuk preview FrontEnd ---->
-
       setError('Login failed')
       console.error('Login error:', error)
     }
