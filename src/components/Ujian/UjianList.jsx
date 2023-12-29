@@ -12,6 +12,7 @@ import {
   UpcomingTags,
 } from '../Tag/Tags'
 import { useUjianContext } from '../../context/ujianContext'
+import Button from '../UI/Button'
 
 const UjianList = () => {
   const { ujianData } = useUjianContext()
@@ -88,7 +89,7 @@ const UjianList = () => {
               } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) < 3) {
                 tagComponent = <PostExamReflectionPreTags />
               } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) >= 3) {
-                tagComponent = <CompletedTags />
+                tagComponent = <CompletedTags /> 
               }
 
               return (
@@ -103,11 +104,11 @@ const UjianList = () => {
                   viewport={{ once: true }}
                 >
                   <Card>
-                    <div className="mb-10">
+                    <div className="mb-6">
                       {tagComponent}
                       <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">{ujian.attributes.nama_ujian}</h1>
 
-                      <p className={`mb-6 line-clamp-3 text-sm text-gray-500`}>{ujian.attributes.deskripsi}</p>
+                      <p className={`mb-4 line-clamp-3 text-sm text-gray-500`}>{ujian.attributes.deskripsi}</p>
                     </div>
                     {/* <div>
                       <p className="mb-2 text-sm font-medium text-black">
@@ -121,8 +122,8 @@ const UjianList = () => {
                       </p>
                     </div> */}
                     {/* <Button>Detail</Button> */}
-                    <Link to={`/exam/${ujian.id}`} className="text-sm underline">
-                      Lihat Detail
+                    <Link to={`/exam/${ujian.id}`}>
+                     <Button>Lihat Detail</Button>
                     </Link>
                   </Card>
                 </motion.div>
