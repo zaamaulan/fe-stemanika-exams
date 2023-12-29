@@ -1,4 +1,4 @@
-import { differenceInMinutes, isPast } from 'date-fns'
+import { differenceInMinutes, format, isPast } from 'date-fns'
 import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
@@ -13,6 +13,7 @@ import {
 } from '../Tag/Tags'
 import { useUjianContext } from '../../context/ujianContext'
 import Button from '../UI/Button'
+import { id } from 'date-fns/locale'
 
 const UjianList = () => {
   const { ujianData } = useUjianContext()
@@ -104,13 +105,13 @@ const UjianList = () => {
                   viewport={{ once: true }}
                 >
                   <Card>
-                    <div className="mb-6">
+                    <div >
                       {tagComponent}
                       <h1 className="mb-2 mt-4 text-2xl font-semibold text-black">{ujian.attributes.nama_ujian}</h1>
 
                       <p className={`mb-4 line-clamp-3 text-sm text-gray-500`}>{ujian.attributes.deskripsi}</p>
                     </div>
-                    {/* <div>
+                    <div className="mb-6">
                       <p className="mb-2 text-sm font-medium text-black">
                         Tanggal: {format(new Date(ujian.attributes.waktu_mulai), 'dd MMMM yyyy', { locale: id })}
                       </p>
@@ -120,7 +121,7 @@ const UjianList = () => {
                       <p className="mb-2 text-sm font-medium text-black">
                         Durasi Pengerjaan: {ujian.attributes.durasi_ujian} menit
                       </p>
-                    </div> */}
+                    </div>
                     {/* <Button>Detail</Button> */}
                     <Link to={`/exam/${ujian.id}`}>
                      <Button>Lihat Detail</Button>
