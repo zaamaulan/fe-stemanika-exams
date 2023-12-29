@@ -66,7 +66,7 @@ const UjianList = () => {
             placeholder="Cari ujian..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded-md border-2 p-2 pl-10 shadow-sm focus:outline-none md:max-w-xs"
+            className="w-full rounded-md border-2 p-2 pl-10 shadow-sm focus:outline-none md:max-w-xs focus:border-black transition-all ease-in"
           />
         </form>
 
