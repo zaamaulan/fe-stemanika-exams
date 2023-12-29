@@ -112,13 +112,13 @@ const UjianList = () => {
                       <p className={`mb-4 line-clamp-3 text-sm text-gray-500`}>{ujian.attributes.deskripsi}</p>
                     </div>
                     <div className="mb-6">
-                      <p className="mb-2 text-sm font-medium text-black">
+                      <p className="mb-2 text-sm text-black">
                         Tanggal: {format(new Date(ujian.attributes.waktu_mulai), 'dd MMMM yyyy', { locale: id })}
                       </p>
-                      <p className="mb-2 text-sm font-medium text-black">
+                      <p className="mb-2 text-sm text-black">
                         Pukul: {format(new Date(ujian.attributes.waktu_mulai), 'HH:mm', { locale: id })} WIB
                       </p>
-                      <p className="mb-2 text-sm font-medium text-black">
+                      <p className="mb-2 text-sm text-black">
                         Durasi Pengerjaan: {ujian.attributes.durasi_ujian} menit
                       </p>
                     </div>
