@@ -1,0 +1,601 @@
+{
+  "data": [
+    {
+      "nama_ujian": "Ujian Matematika",
+      "deskripsi": "Ujian Matematika untuk siswa kelas 11. Ujian ini akan menguji pemahaman siswa dalam berbagai konsep matematika, termasuk aljabar, geometri, dan statistika.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2024-02-10T09:30:00.000Z",
+      "pengawas": "Ibu Siti",
+      "soal": [
+        {
+          "teks_pertanyaan": "Hitunglah hasil dari 2 + 5.",
+          "pilihan_jawaban": ["6", "7", "8", "9", "10"],
+          "jawaban_benar": "7",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Sebuah segitiga memiliki sisi-sisi dengan panjang 3 cm, 4 cm, dan 5 cm. Apakah segitiga tersebut segitiga siku-siku?",
+          "pilihan_jawaban": ["Ya"],
+          "jawaban_benar": "Ya",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Jika x + 3 = 10, berapakah nilai x?",
+          "pilihan_jawaban": ["5", "6", "7", "8", "9"],
+          "jawaban_benar": "7",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Hitunglah luas lingkaran dengan jari-jari 6 cm.",
+          "pilihan_jawaban": ["18π", "24π", "36π", "48π", "72π"],
+          "jawaban_benar": "36π",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Jika a = 2 dan b = 3, berapakah nilai a^2 + b^2?",
+          "pilihan_jawaban": ["5", "8", "10", "13", "15"],
+          "jawaban_benar": "13",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Hitunglah rata-rata dari 5, 8, dan 12.",
+          "pilihan_jawaban": ["6", "8", "9", "10", "12"],
+          "jawaban_benar": "8",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Jika harga sebuah buku adalah Rp 25.000 dan diskon 20%, berapakah harga akhirnya?",
+          "pilihan_jawaban": ["Rp 15.000", "Rp 18.000", "Rp 20.000", "Rp 22.000", "Rp 25.000"],
+          "jawaban_benar": "Rp 20.000",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Berapakah akar kuadrat dari 49?",
+          "pilihan_jawaban": ["5", "6", "7", "8", "9"],
+          "jawaban_benar": "7",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Hitunglah 30% dari 150.",
+          "pilihan_jawaban": ["30", "45", "50", "60", "75"],
+          "jawaban_benar": "45",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Sebuah persegi panjang memiliki panjang 8 cm dan lebar 5 cm. Berapakah kelilingnya?",
+          "pilihan_jawaban": ["18 cm", "26 cm", "32 cm", "40 cm", "48 cm"],
+          "jawaban_benar": "26 cm",
+          "poin_nilai": 4
+        }
+      ]
+    },
+    {
+      "nama_ujian": "Ujian Kimia",
+      "deskripsi": "Ujian Kimia untuk siswa kelas 12. Ujian ini akan menguji pemahaman siswa tentang konsep-konsep dasar kimia, reaksi kimia, dan sifat-sifat materi.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2024-03-20T10:00:00.000Z",
+      "pengawas": "Bapak Rahman",
+      "soal": [
+        {
+          "teks_pertanyaan": "Apa rumus kimia dari air?",
+          "pilihan_jawaban": ["H2O2", "CO2", "H2O", "O2", "CH4"],
+          "jawaban_benar": "H2O",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Sebuah reaksi kimia terjadi ketika zat A bereaksi dengan zat B. Apa yang disebut sebagai produk dalam reaksi ini?",
+          "pilihan_jawaban": ["Zat A", "Zat B", "Katalis", "Produk", "Reaktan"],
+          "jawaban_benar": "Produk",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Berapakah nomor atom dari karbon?",
+          "pilihan_jawaban": ["4", "5", "6", "7", "8"],
+          "jawaban_benar": "6",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa yang dimaksud dengan hukum kekekalan massa dalam reaksi kimia?",
+          "pilihan_jawaban": [
+            "Massa total reaktan sama dengan massa total produk",
+            "Massa suatu zat berubah dalam suatu reaksi kimia",
+            "Massa total reaktan lebih besar dari massa total produk",
+            "Massa total reaktan kurang dari massa total produk"
+          ],
+          "jawaban_benar": "Massa total reaktan sama dengan massa total produk",
+          "poin_nilai": 4
+        },
+        {
+          "pilihan_jawaban": ["Asam Natrium", "Air", "Natrium Klorat"],
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Berapakah jumlah unsur kimia yang terdapat dalam tabel periodik?",
+          "pilihan_jawaban": ["92", "103", "118", "120", "130"],
+          "jawaban_benar": "118",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa yang dimaksud dengan molekul diatomik?",
+          "pilihan_jawaban": [
+            "Molekul yang terdiri dari satu atom",
+            "Molekul yang terdiri dari dua atom",
+            "Molekul yang terdiri dari tiga atom",
+            "Molekul yang terdiri dari empat atom",
+            "Molekul yang terdiri dari lima atom"
+          ],
+          "jawaban_benar": "Molekul yang terdiri dari dua atom",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa fungsi katalis dalam suatu reaksi kimia?",
+          "pilihan_jawaban": [
+            "Meningkatkan kecepatan reaksi",
+            "Mengurangi kecepatan reaksi",
+            "Mengubah produk reaksi",
+            "Menyebabkan reaksi terjadi"
+          ],
+          "jawaban_benar": "Meningkatkan kecepatan reaksi",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Berapakah jumlah neutron dalam atom karbon-12?",
+          "pilihan_jawaban": ["4", "5", "6", "7", "8"],
+          "jawaban_benar": "6",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa yang dimaksud dengan ion?",
+          "pilihan_jawaban": [
+            "Atom yang kehilangan proton",
+            "Atom yang mendapatkan neutron",
+            "Atom yang mendapatkan elektron",
+            "Atom yang kehilangan elektron"
+          ],
+          "jawaban_benar": "Atom yang kehilangan atau mendapatkan elektron",
+          "poin_nilai": 4
+        }
+      ]
+    },
+    {
+      "nama_ujian": "Ujian Fisika",
+      "deskripsi": "Ujian Fisika untuk siswa kelas 10. Ujian ini akan menguji pemahaman siswa tentang konsep-konsep dasar fisika, gerak, energi, dan gaya.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2024-04-15T14:00:00.000Z",
+      "pengawas": "Ibu Indah",
+      "soal": [
+        {
+          "teks_pertanyaan": "Apa rumus untuk menghitung gaya?",
+          "pilihan_jawaban": ["F = ma", "E = mc^2", "P = mv", "W = mg", "a = F/m"],
+          "jawaban_benar": "F = ma",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Sebuah benda bergerak dengan kecepatan konstan. Apa yang dapat kita simpulkan tentang gaya yang bekerja padanya?",
+          "pilihan_jawaban": [
+            "Gaya bersihnya nol",
+            "Gaya hasilnya nol",
+            "Gaya bekerja sepanjang waktu",
+            "Gaya bekerja tanpa henti",
+            "Gaya bersihnya konstan"
+          ],
+          "jawaban_benar": "Gaya bersihnya nol",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Berapakah percepatan gravitasi di permukaan Bumi?",
+          "pilihan_jawaban": ["9.8 m/s^2", "10 m/s^2", "8.5 m/s^2", "12 m/s^2", "7.2 m/s^2"],
+          "jawaban_benar": "9.8 m/s^2",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa hukum pertama gerak Newton?",
+          "pilihan_jawaban": [
+            "Hukum Inersia",
+            "Hukum Aksi dan Reaksi",
+            "Hukum Gaya",
+            "Hukum Kekekalan Energi",
+            "Hukum Coulomb"
+          ],
+          "jawaban_benar": "Hukum Inersia",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Berapa energi kinetik sebuah benda dengan massa 2 kg yang bergerak dengan kecepatan 4 m/s?",
+          "pilihan_jawaban": ["4 J", "8 J", "16 J", "32 J", "64 J"],
+          "jawaban_benar": "16 J",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Sebuah benda mengalami gaya 20 N ke arah kanan dan gaya 15 N ke arah kiri. Berapakah gaya bersihnya?",
+          "pilihan_jawaban": ["5 N ke kanan", "5 N ke kiri", "20 N ke kiri", "35 N ke kanan", "35 N ke kiri"],
+          "jawaban_benar": "5 N ke kanan",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa yang dimaksud dengan momentum?",
+          "pilihan_jawaban": [
+            "Produk massa dan percepatan",
+            "Produk massa dan kecepatan",
+            "Jumlah gaya yang bekerja pada benda",
+            "Energi yang dimiliki benda karena posisinya",
+            "Jumlah gaya yang diterima benda"
+          ],
+          "jawaban_benar": "Produk massa dan kecepatan",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa yang dimaksud dengan energi potensial gravitasi?",
+          "pilihan_jawaban": [
+            "Energi yang dimiliki benda karena geraknya",
+            "Energi yang dimiliki benda karena posisinya",
+            "Energi yang dimiliki benda karena panas",
+            "Energi yang dimiliki benda karena gesekan",
+            "Energi yang dimiliki benda karena bentuknya"
+          ],
+          "jawaban_benar": "Energi yang dimiliki benda karena posisinya",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Sebuah mobil bergerak dengan kecepatan 30 m/s. Jika massa mobil tersebut 1000 kg, berapakah energi kinetiknya?",
+          "pilihan_jawaban": ["450,000 J", "900,000 J", "1,350,000 J", "1,800,000 J", "2,250,000 J"],
+          "jawaban_benar": "450,000 J",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa yang dimaksud dengan gaya normal?",
+          "pilihan_jawaban": [
+            "Gaya yang bekerja pada benda yang bergerak",
+            "Gaya yang bekerja pada benda yang berada di permukaan",
+            "Gaya yang bekerja pada benda yang terapung",
+            "Gaya yang bekerja pada benda yang melayang",
+            "Gaya yang bekerja pada benda yang melengkung"
+          ],
+          "jawaban_benar": "Gaya yang bekerja pada benda yang berada di permukaan",
+          "poin_nilai": 4
+        }
+      ]
+    },
+    {
+      "nama_ujian": "Ujian Bahasa Jerman",
+      "deskripsi": "Ujian Bahasa Jerman untuk siswa kelas 12. Ujian ini akan menguji pemahaman siswa tentang tata bahasa Jerman, kosa kata, pemahaman bacaan, dan kemampuan menulis.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2024-06-10T10:30:00.000Z",
+      "pengawas": "Frau Müller",
+      "soal": [
+        {
+          "teks_pertanyaan": "Apa arti dari kata 'Guten Tag' dalam bahasa Jerman?",
+          "pilihan_jawaban": ["Selamat Pagi", "Selamat Siang", "Selamat Malam", "Selamat Tahun Baru", "Selamat Jalan"],
+          "jawaban_benar": "Selamat Siang",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Bagaimana cara mengucapkan 'terima kasih' dalam bahasa Jerman?",
+          "pilihan_jawaban": ["Bitte", "Danke", "Guten Tag", "Entschuldigung", "Ja"],
+          "jawaban_benar": "Danke",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apakah kata benda 'Buch' (buku) dalam bahasa Jerman bersifat maskulin, feminin, atau netral?",
+          "pilihan_jawaban": ["Maskulin", "Feminin", "Netral"],
+          "jawaban_benar": "Netral",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Bentuk jam berapa jika kita mengatakan 'Es ist fünf vor zwölf' dalam bahasa Jerman?",
+          "pilihan_jawaban": ["Pukul 5", "Pukul 10", "Pukul 11:55", "Pukul 12:05", "Pukul 6"],
+          "jawaban_benar": "Pukul 11:55",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apakah 'Ich habe einen Hund' dalam bahasa Jerman berarti?",
+          "pilihan_jawaban": [
+            "Saya punya kucing",
+            "Saya suka anjing",
+            "Saya memiliki seekor anjing",
+            "Saya lapar",
+            "Saya suka hewan"
+          ],
+          "jawaban_benar": "Saya memiliki seekor anjing",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Tulis kalimat sederhana dalam bahasa Jerman yang menggunakan kata kerja 'spielen' (bermain).",
+          "pilihan_jawaban": [],
+          "jawaban_benar": "Die Kinder spielen im Park. (Anak-anak bermain di taman.)",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apakah 'der Apfel' (apel) dalam bahasa Jerman bersifat maskulin, feminin, atau netral?",
+          "pilihan_jawaban": ["Maskulin", "Feminin", "Netral"],
+          "jawaban_benar": "Maskulin",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa sinonim dari kata 'glücklich' dalam bahasa Jerman?",
+          "pilihan_jawaban": ["Traurig", "Wütend", "Freudig", "Müde", "Verwirrt"],
+          "jawaban_benar": "Freudig",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apakah 'das Auto' (mobil) dalam bahasa Jerman bersifat maskulin, feminin, atau netral?",
+          "pilihan_jawaban": ["Maskulin", "Feminin", "Netral"],
+          "jawaban_benar": "Netral",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Terjemahkan kalimat berikut ke dalam bahasa Jerman: 'I like to travel.'",
+          "pilihan_jawaban": [],
+          "jawaban_benar": "Ich reise gerne.",
+          "poin_nilai": 4
+        }
+      ]
+    },
+    {
+      "nama_ujian": "Ujian Bahasa Inggris",
+      "deskripsi": "English exam for 10th-grade students. The exam will assess students' understanding of grammar, vocabulary, reading comprehension, and writing skills.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2023-12-30T01:30:00.000Z",
+      "pengawas": "Mrs. Johnson",
+      "soal": [
+        {
+          "teks_pertanyaan": "What is the plural form of 'child'?",
+          "pilihan_jawaban": ["childs", "childrens", "child", "children", "childs"],
+          "jawaban_benar": "children",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "In which sentence is the word 'ambitious' used correctly?",
+          "pilihan_jawaban": [
+            "She had a ambitious plan for the project.",
+            "He is an ambitious boy and works hard.",
+            "The ambitious cat slept on the windowsill.",
+            "They went on an ambitious vacation last summer.",
+            "The ambitious played the piano beautifully."
+          ],
+          "jawaban_benar": "He is an ambitious boy and works hard.",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "What is the past tense of the verb 'eat'?",
+          "pilihan_jawaban": ["eat", "eats", "ate", "eated", "eating"],
+          "jawaban_benar": "ate",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Choose the correct synonym for 'happy'.",
+          "pilihan_jawaban": ["sad", "angry", "joyful", "lonely", "tired"],
+          "jawaban_benar": "joyful",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Read the following passage and answer the question:\n\n'The sun sets in the west, creating a beautiful orange and pink sky.'\n\nWhat direction does the sun set?",
+          "pilihan_jawaban": ["east", "west", "north", "south", "up"],
+          "jawaban_benar": "west",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Write a short paragraph describing your favorite book and why you like it.",
+          "pilihan_jawaban": [],
+          "jawaban_benar": "This question is subjective and does not have a predefined correct answer.",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Which of the following sentences is grammatically incorrect?",
+          "pilihan_jawaban": [
+            "She don't like to swim.",
+            "They hasn't finished their homework yet.",
+            "He plays the piano very well.",
+            "We haven't seen the movie yet.",
+            "I can't believe she's gone."
+          ],
+          "jawaban_benar": "She don't like to swim.",
+          "poin_nilai": 4
+        },
+        {
+          "pilihan_jawaban": [
+            "The author's love for nature.",
+            "The benefits of recycling.",
+            "The difficulties of recycling.",
+            "The history of recycling.",
+            "The dangers of pollution."
+          ],
+          "jawaban_benar": "The benefits of recycling.",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Which sentence is written in the passive voice?",
+          "pilihan_jawaban": [
+            "The teacher explained the lesson.",
+            "The car hit the tree.",
+            "The cake was baked by Mary.",
+            "The students are studying for the exam.",
+            "I will finish the project."
+          ],
+          "jawaban_benar": "The cake was baked by Mary.",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Choose the correct spelling of the word.",
+          "pilihan_jawaban": ["accomodate", "accommodate", "acommodate", "acommadate", "accommodatte"],
+          "jawaban_benar": "accommodate",
+          "poin_nilai": 4
+        }
+      ]
+    },
+    {
+      "nama_ujian": "Ujian Bahasa Jepang",
+      "deskripsi": "Ujian Bahasa Jepang untuk siswa kelas 9. Ujian ini akan menguji pemahaman siswa tentang hiragana, kata-kata umum, dan pemahaman dasar Bahasa Jepang.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2023-12-29T12:15:00.000Z",
+      "pengawas": "Sensei Tanaka",
+      "soal": [
+        {
+          "teks_pertanyaan": "Apa arti dari kata 'いただきます' (itadakimasu)?",
+          "pilihan_jawaban": ["Selamat pagi", "Terima kasih", "Selamat malam", "Saya makan", "Apa kabar"],
+          "jawaban_benar": "Saya makan",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Bagaimana cara mengucapkan 'Selamat sore' dalam Bahasa Jepang?",
+          "pilihan_jawaban": ["Ohayou gozaimasu", "Konbanwa", "Konnichiwa", "Sayonara", "Arigatou gozaimasu"],
+          "jawaban_benar": "Konnichiwa",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Berapa huruf dalam aksara hiragana?",
+          "pilihan_jawaban": ["26", "46", "52", "71", "92"],
+          "jawaban_benar": "46",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Terjemahkan kata '学生' (gakusei) ke dalam Bahasa Indonesia.",
+          "pilihan_jawaban": ["Pohon", "Buku", "Sekolah", "Guru", "Mahasiswa"],
+          "jawaban_benar": "Mahasiswa",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa huruf pertama dalam hiragana?",
+          "pilihan_jawaban": ["あ", "い", "う", "え", "お"],
+          "jawaban_benar": "あ",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Tulis kalimat sederhana menggunakan kata 'いいえ' (iie) untuk menolak sesuatu.",
+          "pilihan_jawaban": [],
+          "jawaban_benar": "いいえ、ごめんなさい。 (Iie, gomennasai.)",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa arti dari kata 'ありがとう' (arigatou)?",
+          "pilihan_jawaban": ["Selamat pagi", "Terima kasih", "Selamat malam", "Saya makan", "Apa kabar"],
+          "jawaban_benar": "Terima kasih",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apakah kata 'ねこ' (neko) berarti?",
+          "pilihan_jawaban": ["Anjing", "Kucing", "Burung", "Ikan", "Tikus"],
+          "jawaban_benar": "Kucing",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Terjemahkan kalimat berikut ke dalam Bahasa Jepang: 'I like music.'",
+          "pilihan_jawaban": [],
+          "jawaban_benar": "わたしはおんがくがすきです。 (Watashi wa ongaku ga suki desu.)",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apakah kata 'いってらっしゃい' (itterasshai) berarti?",
+          "pilihan_jawaban": ["Selamat tinggal", "Selamat pagi", "Ayo pergi", "Selamat datang", "Berangkat"],
+          "jawaban_benar": "Ayo pergi",
+          "poin_nilai": 4
+        }
+      ]
+    },
+    {
+      "nama_ujian": "Ujian Seni Budaya",
+      "deskripsi": "Ujian Seni Budaya untuk siswa kelas 11. Ujian ini akan menguji pengetahuan siswa tentang seni rupa, musik, tari, dan budaya tradisional.",
+      "durasi_ujian": 60,
+      "waktu_mulai": "2023-12-28T03:30:00.000Z",
+      "pengawas": "Ibu Santi",
+      "soal": [
+        {
+          "teks_pertanyaan": "Siapa pelukis terkenal dari Renaisans Italia?",
+          "pilihan_jawaban": ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Claude Monet", "Michelangelo"],
+          "jawaban_benar": "Leonardo da Vinci",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Alat musik tradisional dari Indonesia yang dimainkan dengan cara digesek adalah?",
+          "pilihan_jawaban": ["Gamelan", "Suling", "Angklung", "Rebana", "Sasando"],
+          "jawaban_benar": "Sasando",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apakah yang dimaksud dengan seni tari kontemporer?",
+          "pilihan_jawaban": [
+            "Tarian tradisional yang berasal dari daerah tertentu",
+            "Tarian yang menggabungkan unsur-unsur modern dan tradisional",
+            "Tarian berdasarkan cerita rakyat",
+            "Tarian yang hanya dilakukan oleh kalangan tertentu",
+            "Tarian yang berasal dari periode klasik"
+          ],
+          "jawaban_benar": "Tarian yang menggabungkan unsur-unsur modern dan tradisional",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Siapa komponis musik klasik terkenal yang menciptakan 'Symphony No. 9'?",
+          "pilihan_jawaban": [
+            "Wolfgang Amadeus Mozart",
+            "Ludwig van Beethoven",
+            "Johann Sebastian Bach",
+            "Pyotr Ilyich Tchaikovsky",
+            "Franz Schubert"
+          ],
+          "jawaban_benar": "Ludwig van Beethoven",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa tema utama lukisan 'Starry Night' karya Vincent van Gogh?",
+          "pilihan_jawaban": ["Lanskap pedesaan", "Bunga-bunga", "Malam bintang", "Potret diri", "Lautan"],
+          "jawaban_benar": "Malam bintang",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apakah yang dimaksud dengan istilah 'wayang kulit'?",
+          "pilihan_jawaban": [
+            "Seni melukis dengan menggunakan lilin",
+            "Seni pahat dari batok kelapa",
+            "Seni pahat dari kayu",
+            "Seni pertunjukan tradisional dengan bayangan kulit",
+            "Seni merajut dari daerah tertentu"
+          ],
+          "jawaban_benar": "Seni pertunjukan tradisional dengan bayangan kulit",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Siapa penulis terkenal dari sastra Indonesia yang karyanya sering diadaptasi ke dalam seni pertunjukan?",
+          "pilihan_jawaban": [
+            "Pramoedya Ananta Toer",
+            "Chairil Anwar",
+            "Ayu Utami",
+            "Raden Adjeng Kartini",
+            "Mochtar Lubis"
+          ],
+          "jawaban_benar": "Pramoedya Ananta Toer",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apa yang dimaksud dengan seni rupa instalasi?",
+          "pilihan_jawaban": [
+            "Seni melukis di atas kanvas",
+            "Seni pahat dari batu",
+            "Seni pemasangan objek dalam ruang tertentu",
+            "Seni pembuatan patung dari tanah liat",
+            "Seni membuat perhiasan"
+          ],
+          "jawaban_benar": "Seni pemasangan objek dalam ruang tertentu",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Apakah yang dimaksud dengan 'batik'?",
+          "pilihan_jawaban": [
+            "Seni melukis",
+            "Seni membuat patung",
+            "Seni pahat kayu",
+            "Seni tekstil tradisional",
+            "Seni ukir logam"
+          ],
+          "jawaban_benar": "Seni tekstil tradisional",
+          "poin_nilai": 4
+        },
+        {
+          "teks_pertanyaan": "Tarian 'Saman' berasal dari daerah mana?",
+          "pilihan_jawaban": ["Bali", "Jawa Tengah", "Aceh", "Sulawesi Selatan", "Sumatra Barat"],
+          "jawaban_benar": "Aceh",
+          "poin_nilai": 4
+        }
+      ]
+    }
+  ]
+}

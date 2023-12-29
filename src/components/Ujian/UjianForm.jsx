@@ -14,16 +14,70 @@ const UjianForm = () => {
   const [answers, setAnswers] = useState([])
   const [score, setScore] = useState(0)
   const { ujianData } = useUjianContext()
-  const { updateScore } = useResultContext();
+  const { updateScore } = useResultContext()
 
-  const [startTime, setStartTime] = useState(new Date())
-  const [endTime, setEndTime] = useState(null)
-  const [remainingTime, setRemainingTime] = useState(0)
-  const [formattedRemainingTime, setFormattedRemainingTime] = useState('00:00')
-  const [storedExamDuration, setStoredExamDuration] = useState(0)
-  const [currentTime, setCurrentTime] = useState(format(new Date(), 'HH:mm:ss'))
-  const [timeDifference, setTimeDifference] = useState(0)
   const [currentPage, setCurrentPage] = useState(0)
+
+  const [duration] = useState(60 * 60 * 1000)
+  const [timeLeft, setTimeLeft] = useState(() => {
+    const storedTimeLeft = sessionStorage.getItem(`timeLeft_${examId}`)
+    return storedTimeLeft ? parseInt(storedTimeLeft, 10) : duration
+  })
+
+  useEffect(() => {
+    const storedStartTime = localStorage.getItem(`startTime_${examId}`)
+    const storedEndTime = localStorage.getItem(`endTime_${examId}`)
+
+    let startTime
+    if (storedStartTime) {
+      startTime = parseInt(storedStartTime, 10)
+    } else {
+      startTime = new Date().getTime()
+      localStorage.setItem(`startTime_${examId}`, startTime.toString())
+    }
+
+    let endTime
+    if (storedEndTime) {
+      endTime = parseInt(storedEndTime, 10)
+    } else {
+      endTime = startTime + duration
+      localStorage.setItem(`endTime_${examId}`, endTime.toString())
+    }
+
+    const timerInterval = setInterval(() => {
+      const now = new Date().getTime()
+      const elapsedTime = now - startTime
+
+      // Hitung sisa waktu
+      const remainingTime = Math.max(0, endTime - now)
+      setTimeLeft(remainingTime)
+      sessionStorage.setItem(`timeLeft_${examId}`, remainingTime.toString())
+
+      // Jika waktu ujian habis, hentikan interval, navigate, dan hapus waktu dari localStorage
+      if (remainingTime === 0) {
+        clearInterval(timerInterval)
+        navigate(`/exam/${examId}`)
+        localStorage.removeItem(`startTime_${examId}`)
+        localStorage.removeItem(`endTime_${examId}`)
+        sessionStorage.removeItem(`timeLeft_${examId}`)
+      }
+    }, 1000)
+
+    // Membersihkan interval saat komponen dibongkar
+    return () => {
+      clearInterval(timerInterval)
+      sessionStorage.removeItem(`timeLeft_${examId}`)
+    }
+  }, [duration, examId, navigate])
+
+  // Konversi waktu milidetik menjadi format waktu (jam:menit:detik)
+  const formatTime = (milliseconds) => {
+    const hours = Math.floor(milliseconds / (1000 * 60 * 60))
+    const minutes = Math.floor((milliseconds % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((milliseconds % (1000 * 60)) / 1000)
+
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
+  }
 
   const handleNextPage = () => {
     if (currentPage < examData.attributes.soal.length - 1) {
@@ -48,76 +102,6 @@ const UjianForm = () => {
       setExamData(existingExamData)
     }
   }, [examId, ujianData])
-
-  useEffect(() => {
-    const storedStartTime = localStorage.getItem('startTime')
-    const storedRemainingTime = localStorage.getItem('remainingTime')
-    const storedExamDuration = localStorage.getItem('examDuration')
-    const storedEndTime = localStorage.getItem('endTime')
-
-    const date1 = new Date(`2000-01-01T${currentTime}Z`)
-    const date2 = new Date(`2000-01-01T${storedEndTime}Z`)
-
-    if (storedEndTime) {
-      if (date2 < date1) {
-        date2.setDate(date2.getDate() + 1)
-      }
-
-      const diff = date2 - date1
-
-      const formattedRemainingTime = format(diff, 'mm:ss')
-      setFormattedRemainingTime(formattedRemainingTime)
-    }
-
-    if (storedStartTime && storedRemainingTime && storedExamDuration) {
-      const elapsedSeconds = differenceInSeconds(new Date(), new Date(storedStartTime))
-      const remainingSeconds = Math.max(0, parseInt(storedRemainingTime, 10) - elapsedSeconds)
-
-      setStartTime(new Date(storedStartTime))
-      setRemainingTime(remainingSeconds)
-      setStoredExamDuration(parseInt(storedExamDuration, 10))
-
-      // Restore the end time if available
-    } else {
-      const now = new Date()
-
-      // Check if startTime is not in localStorage before setting it
-      if (!storedStartTime) {
-        setStartTime(now)
-        localStorage.setItem('startTime', format(now, 'HH:mm:ss'))
-      }
-
-      const examDuration = 3600
-      const endTime = addSeconds(now, examDuration)
-      setRemainingTime(examDuration)
-      setStoredExamDuration(examDuration)
-
-      // Check if endTime is not in localStorage before setting it
-      if (!storedEndTime) {
-        localStorage.setItem('endTime', format(endTime, 'HH:mm:ss'))
-        setEndTime(endTime)
-      }
-
-      if (currentTime === storedEndTime) {
-        navigate('/exam')
-        localStorage.removeItem('startTime')
-        localStorage.removeItem('endTime')
-      }
-    }
-
-    const intervalId = setInterval(() => {
-      // Perbarui waktu saat ini
-      setCurrentTime(format(new Date(), 'HH:mm:ss'))
-
-      // Perbarui selisih waktu dengan membandingkan endTime dengan waktu sekarang
-      if (endTime) {
-        const diff = differenceInSeconds(endTime, new Date())
-        setTimeDifference(diff)
-      }
-    }, 1000)
-
-    return () => clearInterval(intervalId)
-  }, [currentTime, formattedRemainingTime, endTime, formattedRemainingTime])
 
   const handleChange = (selectedOption) => {
     const newAnswers = [...answers]
@@ -145,8 +129,6 @@ const UjianForm = () => {
 
       const newScore = result.correctCount * 4
 
-      // updateScore(newScore);
-
       setScore(newScore)
       updateScore(newScore)
       console.log('Skor akhir:', newScore)
@@ -155,8 +137,8 @@ const UjianForm = () => {
 
       navigate('/result')
 
-      localStorage.removeItem('startTime')
-      localStorage.removeItem('endTime')
+      localStorage.removeItem(`startTime_${examId}`)
+      localStorage.removeItem(`endTime_${examId}`)
     }
   }
 
@@ -170,7 +152,7 @@ const UjianForm = () => {
             <h1 className="mb-2 flex text-4xl font-bold text-black xl:text-5xl/[1.3]">{attributes.nama_ujian}</h1>
             <p className="mb-6 max-w-screen-md text-sm text-gray-600 xl:text-base">{attributes.deskripsi}</p>
             <p className=" mb-2 flex bg-white  py-4 text-sm font-medium  text-black xl:text-xl">
-              Waktu tersisa: {formattedRemainingTime}
+              Waktu tersisa: {formatTime(timeLeft)}
             </p>
             {isFilled && <div className="pb-4 font-semibold text-red-500">Semua soal harus diisi!</div>}
 

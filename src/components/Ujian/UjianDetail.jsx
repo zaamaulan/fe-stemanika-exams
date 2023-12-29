@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { Link, useParams } from 'react-router-dom'
 import { useUjianContext } from '../../context/ujianContext'
 import Button from '../UI/Button'
+import { CompletedTags, LastMinutePreparationTags, OngoingTags, PostExamReflectionPreTags, UpcomingTags } from '../Tag/Tags'
 
 const UjianDetail = () => {
   const { examId } = useParams()
@@ -19,18 +20,31 @@ const UjianDetail = () => {
   }
 
   let status = null
+  let tagComponent = null
 
   const currentTime = new Date()
   const waktuMulai = new Date(ujian.attributes.waktu_mulai)
   const waktuSelesai = new Date(waktuMulai.getTime() + ujian.attributes.durasi_ujian * 60000)
   const selisihMenit = differenceInMinutes(waktuMulai, currentTime)
 
+  if (currentTime >= waktuMulai && currentTime <= waktuSelesai) {
+    tagComponent = <OngoingTags />
+  } else if (selisihMenit > 3) {
+    tagComponent = <UpcomingTags />
+  } else if (selisihMenit <= 3 && selisihMenit >= 0) {
+    tagComponent = <LastMinutePreparationTags />
+  } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) < 3) {
+    tagComponent = <PostExamReflectionPreTags />
+  } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) >= 3) {
+    tagComponent = <CompletedTags />
+  }
+
   // upcoming
-  if (selisihMenit > 30 || (selisihMenit <= 3 && selisihMenit >= 0)) {
+  if (currentTime >= waktuMulai && currentTime <= waktuSelesai) {
     status = (
-      <Button isDisabled={true} className={'bg-gray-400 text-white '}>
-        Ujian Belum Tersedia
-      </Button>
+      <Link to={`/exam/${examId}/form`}>
+        <Button className={' bg-black text-white w-full'}>Mulai Mengerjakan</Button>
+      </Link>
     )
   }
   // completed
@@ -39,26 +53,30 @@ const UjianDetail = () => {
     (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) >= 3)
   ) {
     status = (
-      <Button isDisabled={true} className={'bg-gray-400 text-white'}>
+      <Button isDisabled={true} >
         Ujian Sudah Berakhir
       </Button>
     )
   }
   // ongoing
-  else if (currentTime >= waktuMulai && currentTime <= waktuSelesai) {
+  else if (selisihMenit > 3 || (selisihMenit <= 2 && selisihMenit >= 0)) {
     status = (
-      <Link to={`/exam/${examId}/form`}>
-        <Button className={' bg-black text-white '}>Mulai Kerjakan</Button>
-      </Link>
-    )
+      <Button isDisabled={true} >
+        Ujian Belum Tersedia
+      </Button>
+    ) 
   }
+  
   return (
     <>
       {ujian ? (
-        <section className="px-6 md:items-center xl:flex xl:w-full xl:flex-col xl:px-40 xl:py-20">
+        <section className="px-6 md:items-center xl:flex xl:w-full xl:flex-col xl:px-60 xl:py-20">
           <div className="min-w-sm mb-6 w-full xl:mb-14">
             <div className="gap-6 xl:flex">
               <div className="basis-3/4">
+                <div className="mb-4">
+                  {tagComponent}
+                </div>
                 <div className="mb-4">
                   <h1 className="mb-2 flex text-4xl font-bold text-black xl:text-5xl/[1.3]">
                     {ujian.attributes.nama_ujian}

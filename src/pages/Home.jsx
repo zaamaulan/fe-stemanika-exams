@@ -134,7 +134,7 @@ const App = () => {
 
               if (currentTime >= waktuMulai && currentTime <= waktuSelesai) {
                 tagComponent = <OngoingTags />
-              } else if (selisihMenit > 30) {
+              } else if (selisihMenit > 3) {
                 tagComponent = <UpcomingTags />
               } else if (selisihMenit <= 3 && selisihMenit >= 0) {
                 tagComponent = <LastMinutePreparationTags />
