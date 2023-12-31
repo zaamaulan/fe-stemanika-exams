@@ -65,12 +65,12 @@ const NavBar = () => {
           </span>
         </div>
         <Link to={'/profile'}>
-          <img src="/profile.jpg" alt="" className="xl:w-10 xl:rounded-full" />
+          <img src="/profile2.png" alt="" className="xl:w-10 xl:rounded-full" />
         </Link>
       </div>
       <div
         className={`flex items-center justify-between bg-white px-6 py-4 transition-all duration-500 ease-in-out xl:hidden ${
-          showNavLinks ? 'bg-white' : 'bg-opacity-50 backdrop-blur-lg backdrop-filter'
+          showNavLinks ? 'bg-white' : 'bg-opacity-50 shadow-sm shadow-gray-100 backdrop-blur-lg backdrop-filter'
         } navbar-container`}
       >
         <motion.div
@@ -165,7 +165,7 @@ const NavBar = () => {
           }}
         >
           <Link to={'/profile'} onClick={() => handleLinkClick('/profile')}>
-            <img src="/profile.jpg" alt="" className="w-8 rounded-full" />
+            <img src="/profile2.png" alt="" className="w-8 rounded-full" />
           </Link>
         </motion.div>
       </div>
