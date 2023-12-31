@@ -1,10 +1,10 @@
-import { addSeconds, differenceInSeconds, format } from 'date-fns' // Import format and addSeconds functions
+import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useUjianContext } from '../../context/ujianContext'
+import { useAuth } from '../../context/useAuth'
 import Card from '../Card/Card'
 import Button from '../UI/Button'
-import { useResultContext } from '../../context/scoreContext'
 
 const UjianForm = () => {
   const navigate = useNavigate()
@@ -12,17 +12,17 @@ const UjianForm = () => {
   const [isFilled, setIsFilled] = useState(false)
   const [examData, setExamData] = useState({})
   const [answers, setAnswers] = useState([])
-  const [score, setScore] = useState(0)
   const { ujianData } = useUjianContext()
-  const { updateScore } = useResultContext()
-
   const [currentPage, setCurrentPage] = useState(0)
-
   const [duration] = useState(60 * 60 * 1000)
   const [timeLeft, setTimeLeft] = useState(() => {
     const storedTimeLeft = sessionStorage.getItem(`timeLeft_${examId}`)
     return storedTimeLeft ? parseInt(storedTimeLeft, 10) : duration
   })
+
+  const { userId } = useAuth()
+  const { attributes } = examData
+
 
   useEffect(() => {
     const storedStartTime = localStorage.getItem(`startTime_${examId}`)
@@ -109,7 +109,7 @@ const UjianForm = () => {
     setAnswers(newAnswers)
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (answers.some((answer) => answer === null)) {
       setIsFilled(true)
       return
@@ -127,13 +127,23 @@ const UjianForm = () => {
         { correctCount: 0, wrongCount: 0 },
       )
 
-      const newScore = result.correctCount * 4
+      const score = result.correctCount * 4
 
-      setScore(newScore)
-      updateScore(newScore)
-      console.log('Skor akhir:', newScore)
-      console.log('Soal yang benar:', result.correctCount)
-      console.log('Soal yang salah:', result.wrongCount)
+      if (attributes) {
+        try {
+          const response = await axios.post(`${import.meta.env.VITE_APP_API_URL}/api/nilais?populate=*`, {
+            data: {
+              nilai: score,
+              ujian: examId,
+              user: userId,
+              nama_ujian: attributes.nama_ujian
+            },
+          })
+          console.log('Nilai berhasil ditambahkan:', response.data)
+        } catch (error) {
+          console.error('Terjadi kesalahan:', error.message)
+        }
+      }
 
       navigate('/result')
 
@@ -142,7 +152,6 @@ const UjianForm = () => {
     }
   }
 
-  const { attributes } = examData
 
   return (
     <div className="px-6 xl:flex xl:w-full xl:flex-col xl:px-[20rem] xl:py-2">

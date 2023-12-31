@@ -6,14 +6,45 @@ import { motion } from 'framer-motion'
 import { Link, useParams } from 'react-router-dom'
 import { useUjianContext } from '../../context/ujianContext'
 import Button from '../UI/Button'
-import { CompletedTags, LastMinutePreparationTags, OngoingTags, PostExamReflectionPreTags, UpcomingTags } from '../Tag/Tags'
+import {
+  CompletedTags,
+  LastMinutePreparationTags,
+  OngoingTags,
+  PostExamReflectionPreTags,
+  UpcomingTags,
+} from '../Tag/Tags'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useAuth } from '../../context/useAuth'
 
 const UjianDetail = () => {
   const { examId } = useParams()
   const { ujianData } = useUjianContext()
+  const { userId } = useAuth()
 
   // Find the specific exam using examId
   const ujian = ujianData.find((ujian) => ujian.id === parseInt(examId))
+
+  const [hasTakenExam, setHasTakenExam] = useState(false)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}/api/nilais?populate=*`)
+
+        const userScores = response.data.data || []
+        const hasTakenExam = userScores.some(
+          (score) =>
+            score.attributes.user?.data?.id === userId && score.attributes.ujian?.data?.id === parseInt(examId, 10),
+        )
+        setHasTakenExam(hasTakenExam)
+      } catch (error) {
+        console.error('Terjadi kesalahan:', error.message)
+      }
+    }
+
+    fetchData()
+  }, [userId, examId])
 
   if (!ujian) {
     return <div className="-mt-28 flex h-screen items-center justify-center text-xl">Loading</div>
@@ -29,44 +60,41 @@ const UjianDetail = () => {
 
   if (currentTime >= waktuMulai && currentTime <= waktuSelesai) {
     tagComponent = <OngoingTags />
-  } else if (selisihMenit > 3) {
-    tagComponent = <UpcomingTags />
-  } else if (selisihMenit <= 3 && selisihMenit >= 0) {
-    tagComponent = <LastMinutePreparationTags />
-  } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) < 3) {
-    tagComponent = <PostExamReflectionPreTags />
-  } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) >= 3) {
-    tagComponent = <CompletedTags />
-  }
-
-  // upcoming
-  if (currentTime >= waktuMulai && currentTime <= waktuSelesai) {
     status = (
       <Link to={`/exam/${examId}/form`}>
-        <Button className={' bg-black text-white w-full'}>Mulai Mengerjakan</Button>
+        <Button className={'bg-green-500 text-white'}>Mulai Mengerjakan</Button>
       </Link>
     )
-  }
-  // completed
-  else if (
-    (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) < 3) ||
-    (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) >= 3)
-  ) {
+  } else if (selisihMenit > 3) {
+    tagComponent = <UpcomingTags />
     status = (
-      <Button isDisabled={true} >
+      <Button isDisabled={true} className={'bg-blue-500 text-white'}>
+        Ujian Belum Tersedia
+      </Button>
+    )
+  } else if (selisihMenit <= 3 && selisihMenit >= 0) {
+    tagComponent = <LastMinutePreparationTags />
+    status = (
+      <Button isDisabled={true} className={'bg-yellow-500 text-white'}>
+        Ujian Ini Tersedia Dalam Beberapa Menit Lagi
+      </Button>
+    )
+  } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) < 3) {
+    tagComponent = <PostExamReflectionPreTags />
+    status = (
+      <Button isDisabled={true} className={'bg-purple-500 text-white'}>
+        Ujian Sudah Berakhir Beberapa Menit yang Lalu
+      </Button>
+    )
+  } else if (isPast(waktuSelesai) && differenceInMinutes(currentTime, waktuSelesai) >= 3) {
+    tagComponent = <CompletedTags />
+    status = (
+      <Button isDisabled={true} className={'bg-gray-500 text-white'}>
         Ujian Sudah Berakhir
       </Button>
     )
   }
-  // ongoing
-  else if (selisihMenit > 3 || (selisihMenit <= 2 && selisihMenit >= 0)) {
-    status = (
-      <Button isDisabled={true} >
-        Ujian Belum Tersedia
-      </Button>
-    ) 
-  }
-  
+
   return (
     <>
       {ujian ? (
@@ -74,9 +102,7 @@ const UjianDetail = () => {
           <div className="min-w-sm mb-6 w-full xl:mb-14">
             <div className="gap-6 xl:flex">
               <div className="basis-3/4">
-                <div className="mb-4">
-                  {tagComponent}
-                </div>
+                <div className="mb-4">{tagComponent}</div>
                 <div className="mb-4">
                   <h1 className="mb-2 flex text-4xl font-bold text-black xl:text-5xl/[1.3]">
                     {ujian.attributes.nama_ujian}
@@ -104,8 +130,13 @@ const UjianDetail = () => {
                   </p>
                 </div>
 
-                {status}
-               
+                {hasTakenExam ? (
+                  <Button isDisabled={hasTakenExam} className={`${hasTakenExam ? 'bg-gray-500 text-white' : null}`}>
+                    Kamu sudah mengerjakan ujian ini
+                  </Button>
+                ) : (
+                  status
+                )}
               </div>
               <motion.div className="pt-20 xl:pt-0">
                 <motion.h1
